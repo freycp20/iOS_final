@@ -1,0 +1,64 @@
+{
+    "undergraduate_schools": [{
+        "school_name": "Grove City College",
+        "meta_data": {
+            "size": 4400,
+            "average_sat": 1250,
+            "average_gpa": 3.67,
+            "avg_cost_before_financial_aid": 31840,
+            "avg_cost_after_financial_aid": null,
+            "location": {
+                "latitude": 41.155609,
+                "longitude": -80.082100
+            }
+        },
+        "url": "https://www.gcc.edu",
+        "image": "grove_city_college"
+    }, {
+        "school_name": "Slippery Rock",
+        "meta_data": {
+            "size": 6920,
+            "average_sat": 1086,
+            "average_gpa": 3.42,
+            "avg_cost_before_financial_aid": null,
+            "avg_cost_after_financial_aid": 20000,
+            "location": {
+                "latitude": 41.0620,
+                "longitude": 80.0430
+            }
+        },
+        "url": "https://www.sru.edu",
+        "image": "slippery_rock"
+    }, {
+        "school_name": "Grove City College",
+        "meta_data": {
+            "size": 4400,
+            "average_sat": 1250,
+            "average_gpa": 3.67,
+            "avg_cost_before_financial_aid": 31840,
+            "avg_cost_after_financial_aid": null,
+            "location": {
+                "latitude": 41.155609,
+                "longitude": -80.082100
+            }
+        },
+        "url": "https://www.gcc.edu",
+        "image": "grove_city_college"
+    }],
+    "graduate_schools": [{
+        "school_name": "",
+        "meta_data": {
+            "size": 0,
+            "average_sat": 0,
+            "average_gpa": 0.0,
+            "avg_cost_before_financial_aid": 0,
+            "avg_cost_after_financial_aid": 0,
+            "location": {
+                "latitude": 0.0,
+                "longitude": 0.0
+            }
+        },
+        "url": "",
+        "image": ""
+    }]
+}
