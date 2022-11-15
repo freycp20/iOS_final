@@ -36,10 +36,9 @@ struct ExploreView: View {
                     NavigationLink {
                         // This is where we are going to show the sheet thing
                     } label: {
-                        SchoolCard(currentSchool: currentSchool, expanded: true)
-                            
+                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5)
                     }
-                    .padding()
+//                    .padding()
                     .foregroundColor(.black)
                     
                     
@@ -57,7 +56,7 @@ struct ExploreView: View {
 //                            Text("bad")
                             Image(systemName: "trash")
                                 .frame(width:geo.size.width/3.5)
-                                .padding([.top, .bottom], 20)
+                                .padding([.top, .bottom], geo.size.height/35)
                                 .foregroundColor(.white)
                                 
                         }.buttonStyle(GradientButtonStyle(color: Color.red, corners: [.topLeft, .bottomLeft]))
@@ -79,11 +78,11 @@ struct ExploreView: View {
 //                            Text("good")
                             Image(systemName: "bookmark")
                                 .frame(width:geo.size.width/3.5)
-                                .padding([.top, .bottom], 20)
+                                .padding([.top, .bottom], geo.size.height/35)
                                 .foregroundColor(.white)
                                 
                         }.buttonStyle(GradientButtonStyle(color: Color.green, corners: [.topRight, .bottomRight]))
-                    }.padding(.top, 30)
+                    }.padding(.top, geo.size.height/30)
                     Text("\(index + 1) of \(VM.undergrad_schools.count)")
                         .font(.caption)
                         .padding(.top, 10)

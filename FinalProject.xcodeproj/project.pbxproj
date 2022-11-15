@@ -20,6 +20,7 @@
 		4A290CC6291A22C5008AC4AE /* SchoolCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CC5291A22C5008AC4AE /* SchoolCard.swift */; };
 		4A290CC8291A25BE008AC4AE /* ListSchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CC7291A25BE008AC4AE /* ListSchoolView.swift */; };
 		4A290CCA291B0D70008AC4AE /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CC9291B0D70008AC4AE /* SideMenu.swift */; };
+		4A290CF0292327DA008AC4AE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CEF292327DA008AC4AE /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		4A290CC5291A22C5008AC4AE /* SchoolCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCard.swift; sourceTree = "<group>"; };
 		4A290CC7291A25BE008AC4AE /* ListSchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSchoolView.swift; sourceTree = "<group>"; };
 		4A290CC9291B0D70008AC4AE /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		4A290CEF292327DA008AC4AE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4A290CC5291A22C5008AC4AE /* SchoolCard.swift */,
 				4A290CC7291A25BE008AC4AE /* ListSchoolView.swift */,
 				4A290CC9291B0D70008AC4AE /* SideMenu.swift */,
+				4A290CEF292327DA008AC4AE /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				4A290CC6291A22C5008AC4AE /* SchoolCard.swift in Sources */,
 				4A290CCA291B0D70008AC4AE /* SideMenu.swift in Sources */,
 				4A290CA62919B6CD008AC4AE /* ViewModel.swift in Sources */,
+				4A290CF0292327DA008AC4AE /* CardView.swift in Sources */,
 				4A290C8B29197288008AC4AE /* FinalProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
