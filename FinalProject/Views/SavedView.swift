@@ -11,6 +11,10 @@ struct SavedView: View {
     @EnvironmentObject var VM : ViewModel
     var body: some View {
         VStack {
+            Text("Saved Schools")
+                .font(.largeTitle)
+                .bold()
+                .padding()
             ScrollView {
                 ForEach(0..<VM.saved_schools.count, id: \.self) { idx in
                     let school = VM.saved_schools[idx]
