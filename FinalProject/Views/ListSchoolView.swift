@@ -10,7 +10,6 @@ import SwiftUI
 struct ListSchoolView: View {
     @EnvironmentObject var VM : ViewModel
     var currentSchool : School
-    var index : Int
     var expanded: Bool
     var body: some View {
         VStack {
@@ -21,14 +20,7 @@ struct ListSchoolView: View {
                     .bold()
                     .padding()
                 Spacer()
-                Button {
-                    VM.saved_schools.remove(at: VM.saved_schools.firstIndex(where: {$0.school_name == currentSchool.school_name})!)
-                    
-                } label: {
-                    Image(systemName: "trash")
-                        .padding()
-                        .foregroundColor(.white)
-                }
+                
             }.frame(height: 70)
             .background(
                 Image(currentSchool.image)
@@ -38,36 +30,16 @@ struct ListSchoolView: View {
 //                    .cornerRadius(CGFloat(VM.corner_radius))
             )
             
-            .cornerRadius(10)
+//            .cornerRadius(10)
             
-//            .padding()
-//            ZStack(alignment:.topLeading) {
-//                Color.clear
-//                    .aspectRatio(contentMode: .fill)
-//                    .overlay(
-//                        Image(currentSchool.image)
-//                            .resizable()
-//                            .scaledToFill()
-//                            .frame(height:50, width: 100)
-//                        )
-//                    .clipShape(Rectangle())
-//                    .cornerRadius(15, corners: [.topLeft, .topRight])
-//                    .frame(height: 80)
-//
-//
+
 //            }
-            if expanded {
-                HStack {
-                    Text("Average GPA: \(currentSchool.meta_data.average_gpa, specifier: "%.2f")")
-                    Text("Average SAT: \(currentSchool.meta_data.average_sat)")
-                }.padding(30)
-            }
         }
 //        .frame(height: 80)
         .background(RoundedRectangle(cornerRadius: CGFloat(VM.corner_radius)).fill(.white))
-        .padding([.leading, .trailing], 15)
         .clipped()
         .shadow(color: Color.gray, radius: 5, x: 0, y: 0)
+//        .padding([.leading, .trailing], 15)
     }
 }
 

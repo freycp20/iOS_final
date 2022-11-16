@@ -11,6 +11,7 @@ struct CardView: View {
     @EnvironmentObject var VM : ViewModel
     var currentSchool : School
     var height : CGFloat
+    @Binding var changing : Bool
     var body: some View {
         ZStack {
         VStack(spacing:0) {
@@ -44,9 +45,11 @@ struct CardView: View {
                         .font(.title2)
                         .bold()
                         .padding(.bottom, 5)
+                        .multilineTextAlignment(.leading)
                     Text("\(currentSchool.meta_data.average_gpa, specifier: "%.2f") ")
                         .font(.headline)
                         .foregroundColor(.secondary)
+                    
                 }.frame(
                     minWidth: 0,
                     maxWidth: .infinity,
@@ -59,9 +62,11 @@ struct CardView: View {
                         .font(.title2)
                         .bold()
                         .padding(.bottom, 5)
+                        .multilineTextAlignment(.leading)
                     Text("\(currentSchool.meta_data.average_sat)")
                         .font(.headline)
                         .foregroundColor(.secondary)
+                    
                 }.frame(
                     minWidth: 0,
                     maxWidth: .infinity,
@@ -76,9 +81,9 @@ struct CardView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.3), lineWidth: 1)
-        )
-        }.cornerRadius(10)
-            .shadow(color: .gray, radius: 10, x: 0, y: 0)
+        )}
+        .cornerRadius(10)
+        .shadow(color: .gray, radius: 10, x: 0, y: 0)
         .padding([.top, .horizontal])
     }
 }

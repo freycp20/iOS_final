@@ -11,93 +11,165 @@ struct ExploreView: View {
     @EnvironmentObject var VM : ViewModel
     @State var index : Int = 0
     @State private var isSideBarOpened = false
+    @State private var cardChange = true
+    
     var currentSchool : School {
         get {
             return VM.undergrad_schools[index]
         }
     }
-    let transition = AnyTransition.asymmetric(insertion: .slide, removal: .scale).combined(with: .opacity)
-
+    @State var insert : AnyTransition = .scale
+    @State var remove : AnyTransition = .slide
+    
+    @State var green : Bool = true
+    @State var overlay : Bool = false
+    var transition : AnyTransition {
+        get {
+            return AnyTransition.asymmetric(insertion: self.insert, removal: self.remove).combined(with: .opacity)
+        }
+    }
+    
     var body: some View {
         GeometryReader { geo in
             NavigationView {
-                VStack {
-                    Button {
-                        // go to the previous image
+                ZStack {
+                    VStack {
+                        HStack {
+                        Button {
+                            //nothing yet
+                            isSideBarOpened.toggle()
+                        } label: {
+
+                            Image(systemName: "line.3.horizontal")
+                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+//                                .padding(20)
+                                .frame(width: 25, height:15)
+                            
+                        }
+                            Spacer()
+                        }.padding(.leading, 15)
+                        Spacer()
+                    }
+                    
+                    VStack {
+                        
+                        Button {
+                            // go to the previous image
                         if (index - 1 < 0) {
                             index = 0
                         } else {
                             index -= 1
+                            self.remove = .bottomslide
+                            cardChange.toggle()
                         }
-                    } label: {
-                        Image(systemName: "arrow.up.to.line.compact")
-                    }.foregroundColor(.black)
-                    Spacer()
-                    NavigationLink {
-                        // This is where we are going to show the sheet thing
-                    } label: {
-                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5)
-                    }
-//                    .padding()
-                    .foregroundColor(.black)
-                    
-                    
-                    
-                    HStack (spacing:0) {
-                        Button {
-                            // what the button going to do
-                            if (index + 1 > VM.undergrad_schools.count-1) {
-                                index = VM.undergrad_schools.count-1
-                            } else {
-                                index += 1
-                            }
                         } label: {
-                            // what it look like
-//                            Text("bad")
-                            Image(systemName: "trash")
-                                .frame(width:geo.size.width/3.5)
-                                .padding([.top, .bottom], geo.size.height/35)
-                                .foregroundColor(.white)
-                                
-                        }.buttonStyle(GradientButtonStyle(color: Color.red, corners: [.topLeft, .bottomLeft]))
-                        
-//                        .background(.red)
-//                            .cornerRadius(10, corners: [.topLeft, .bottomLeft])
+                            Image(systemName: "arrow.up.to.line.compact")
+                        }.foregroundColor(.black)
+                        Spacer()
+                        NavigationLink {
+                            // This is where we are going to show the sheet thing
+                        } label: {
+                            if (cardChange) {
+                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
+//                                    .overlay(.green).clipped()
+//                                    .overlay(self.overlay ? RoundedRectangle(cornerRadius: 10).fill(Color(red: self.green ? 0 : 1, green: self.green ? 1 : 0, blue: 0, opacity: 0.6)) : RoundedRectangle(cornerRadius: 10).fill(Color.clear))
+                                    .transition(transition)
+                                    
+//                                    .foregroundColor(Color(red: 1.0, green: 0, blue: 1.0, opacity: 0.2))
+                            } else {
+                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
+
+//                                    .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
+//                                        Button {
+//                                            print("working")
+//                                        } label: {
+//                                            Image(systemName: "x.square.fill").foregroundColor(.white)
+//                                        }.background(.red)
+//                                    })
+                                    .transition(transition)
+                                    
+                            }
+                        }.animation(.default.speed(1), value: cardChange)
                             
-                        Button {
-//                            if !(currentSchool )
-                            VM.saved_schools.append(currentSchool)
-                            if (index + 1 > VM.undergrad_schools.count-1) {
-                                index = VM.undergrad_schools.count-1
-                            } else {
-                                index += 1
-                            }
-//                            print(VM.undergrad_schools.count)
-//                            print(index)
-                        } label: {
-//                            Text("good")
-                            Image(systemName: "bookmark")
-                                .frame(width:geo.size.width/3.5)
-                                .padding([.top, .bottom], geo.size.height/35)
-                                .foregroundColor(.white)
+                        .foregroundColor(.black)
+                        
+                        
+                        
+                        HStack (spacing:0) {
+                            Button {
+                                // what the button going to do
+                                if (index + 1 > VM.undergrad_schools.count-1) {
+                                    index = VM.undergrad_schools.count-1
+                                } else {
+                                    index += 1
+                                    self.remove = .backslide
+//                                    self.overlay = true
+                                    cardChange.toggle()
+//                                    self.overlay = false
+                                    
+                                }
+
+                            } label: {
+                                // what it look like
+                                //                            Text("bad")
+                                Image(systemName: "trash")
+                                    .frame(width:geo.size.width/3.5)
+                                    .padding([.top, .bottom], geo.size.height/35)
+                                    .foregroundColor(.white)
                                 
-                        }.buttonStyle(GradientButtonStyle(color: Color.green, corners: [.topRight, .bottomRight]))
-                    }.padding(.top, geo.size.height/30)
-                    Text("\(index + 1) of \(VM.undergrad_schools.count)")
-                        .font(.caption)
-                        .padding(.top, 10)
-                    Spacer()
-                }.animation(.default, value: true)
-                .navigationBarHidden(true)
-                .navigationTitle(Text("Schools"))
-//                .navigationBarTitleDisplayMode(.inline)
-//                .edgesIgnoringSafeArea([.top, .bottom])
+                            }.buttonStyle(GradientButtonStyle(color: Color.red, corners: [.topLeft, .bottomLeft]))
+                            
+                            Button {
+                                if (!VM.saved_schools.contains(currentSchool)) {
+                                    VM.saved_schools.append(currentSchool)
+                                }
+                                if (index + 1 > VM.undergrad_schools.count-1) {
+                                    index = VM.undergrad_schools.count-1
+                                } else {
+                                    index += 1
+                                    self.remove = .slide
+//                                    self.overlay = true
+                                    cardChange.toggle()
+                                }
+                            } label: {
+                                Image(systemName: "bookmark")
+                                    .frame(width:geo.size.width/3.5)
+                                    .padding([.top, .bottom], geo.size.height/35)
+                                    .foregroundColor(.white)
+                            }.buttonStyle(GradientButtonStyle(color: Color.green, corners: [.topRight, .bottomRight]))
+                        }.padding(.top, geo.size.height/30)
+                        Text("\(index + 1) of \(VM.undergrad_schools.count)")
+                            .font(.caption)
+                            .padding(.top, 10)
+                        Spacer()
+                        
+                    }.animation(.default, value: true)
+                        .navigationBarHidden(true)
+                        .navigationTitle(Text("Schools"))
+                    
+                    //                .navigationBarTitleDisplayMode(.inline)
+                    //                .edgesIgnoringSafeArea([.top, .bottom])
+                }
             }
-            SideMenu(isSidebarVisible: $isSideBarOpened)
+                        SideMenu(isSidebarVisible: $isSideBarOpened)
+            
+            
         }
         
     }
     
+}
+
+extension AnyTransition {
+    static var backslide: AnyTransition {
+        AnyTransition.asymmetric(
+            insertion: .move(edge: .trailing),
+            removal: .move(edge: .leading))}
+    static var bottomslide: AnyTransition {
+        AnyTransition.asymmetric(
+            insertion: .move(edge: .top),
+            removal: .move(edge: .bottom))}
 }
 
 extension View {
@@ -111,19 +183,19 @@ struct GradientButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .background(color)
-//            .padding()
-//            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
+        //            .padding()
+        //            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing))
             .cornerRadius(15.0, corners: corners)
             .brightness(configuration.isPressed ? 0.2 : 0)
-//            .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
-            
+        //            .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
+        
     }
 }
 struct RoundedCorner: Shape {
-
+    
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
-
+    
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)

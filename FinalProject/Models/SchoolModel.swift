@@ -14,7 +14,11 @@ struct AllSchools : Decodable{
     
 }
 
-struct School : Decodable, Identifiable {
+struct School : Decodable, Identifiable, Equatable {
+    static func == (lhs: School, rhs: School) -> Bool {
+        return lhs.id == rhs.id && lhs.school_name == rhs.school_name
+    }
+    
     var id : UUID?
     var school_name : String
     var meta_data : MetaData
