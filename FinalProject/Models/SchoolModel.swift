@@ -26,9 +26,13 @@ struct MetaData : Decodable {
     var size : Int
     var average_sat : Int
     var average_gpa : Double
-    var average_cost_before_financial_aid : Int?
-    var average_cost_after_financial_aid : Int?
+    var avg_cost_before_financial_aid : Int?
+    var avg_cost_after_financial_aid : Int?
     var location : Location
+    var student_to_faculty_ratio : String
+    var state : String
+    var type_of_community : String
+    
 }
 
 struct Location : Decodable {
@@ -36,13 +40,3 @@ struct Location : Decodable {
     var longitude : Double
 }
 
-//struct U : Decodable {
-//    var sport : Question = Question()
-//    var maths = [Question]()
-//}
-//struct Question : Decodable, Identifiable {
-//    var id : UUID?
-//    var question : String = ""
-//    var options = [String]()
-//    var answer = ""
-//}

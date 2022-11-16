@@ -20,6 +20,9 @@
 		4A290CC6291A22C5008AC4AE /* SchoolCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CC5291A22C5008AC4AE /* SchoolCard.swift */; };
 		4A290CC8291A25BE008AC4AE /* ListSchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CC7291A25BE008AC4AE /* ListSchoolView.swift */; };
 		4A290CCA291B0D70008AC4AE /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A290CC9291B0D70008AC4AE /* SideMenu.swift */; };
+		BA22ED5129231E3E00D81EC3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22ED5029231E3E00D81EC3 /* DetailView.swift */; };
+		BA22ED53292347BA00D81EC3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22ED52292347BA00D81EC3 /* MapView.swift */; };
+		BA22ED55292347DD00D81EC3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22ED54292347DD00D81EC3 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		4A290CC5291A22C5008AC4AE /* SchoolCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCard.swift; sourceTree = "<group>"; };
 		4A290CC7291A25BE008AC4AE /* ListSchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSchoolView.swift; sourceTree = "<group>"; };
 		4A290CC9291B0D70008AC4AE /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		BA22ED5029231E3E00D81EC3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BA22ED52292347BA00D81EC3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BA22ED54292347DD00D81EC3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				4A290CC5291A22C5008AC4AE /* SchoolCard.swift */,
 				4A290CC7291A25BE008AC4AE /* ListSchoolView.swift */,
 				4A290CC9291B0D70008AC4AE /* SideMenu.swift */,
+				BA22ED5029231E3E00D81EC3 /* DetailView.swift */,
+				BA22ED52292347BA00D81EC3 /* MapView.swift */,
+				BA22ED54292347DD00D81EC3 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,10 +199,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A290CA029197402008AC4AE /* SavedView.swift in Sources */,
+				BA22ED53292347BA00D81EC3 /* MapView.swift in Sources */,
+				BA22ED55292347DD00D81EC3 /* WebView.swift in Sources */,
 				4A290C8D29197289008AC4AE /* ContentView.swift in Sources */,
 				4A290CA22919741D008AC4AE /* ProfileView.swift in Sources */,
 				4A290C9D291973EA008AC4AE /* ExploreView.swift in Sources */,
 				4A290CA82919B6E5008AC4AE /* SchoolModel.swift in Sources */,
+				BA22ED5129231E3E00D81EC3 /* DetailView.swift in Sources */,
 				4A290CC8291A25BE008AC4AE /* ListSchoolView.swift in Sources */,
 				4A290CC6291A22C5008AC4AE /* SchoolCard.swift in Sources */,
 				4A290CCA291B0D70008AC4AE /* SideMenu.swift in Sources */,

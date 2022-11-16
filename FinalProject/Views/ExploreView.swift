@@ -35,6 +35,7 @@ struct ExploreView: View {
                     Spacer()
                     NavigationLink {
                         // This is where we are going to show the sheet thing
+                        DetailView(VM: _VM, currentSchool: currentSchool)
                     } label: {
                         SchoolCard(currentSchool: currentSchool, expanded: true)
                             
@@ -109,6 +110,7 @@ extension View {
 struct GradientButtonStyle: ButtonStyle {
     var color : Color
     var corners : UIRectCorner
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .background(color)
@@ -131,8 +133,11 @@ struct RoundedCorner: Shape {
     }
 }
 
-struct ExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExploreView()
-    }
-}
+//struct ExploreView_Previews: PreviewProvider {
+//    @Binding var showWeb : Bool
+//    @EnvironmentObject var VM : ViewModel
+//    @State var index : Int = 0
+//    static var previews: some View {
+//        ExploreView(VM: _VM, index: index, showWeb: $showWeb)
+//    }
+//}
