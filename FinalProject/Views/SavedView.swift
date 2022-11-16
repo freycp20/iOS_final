@@ -15,7 +15,7 @@ struct SavedView: View {
             List {
                 ForEach(VM.saved_schools) { school in
                     ZStack {
-                        NavigationLink(destination: Text("pass")) { EmptyView() }.opacity(0.0)
+                        NavigationLink(destination: DetailView(currentSchool: school)) { EmptyView() }.opacity(0.0)
                         ListSchoolView(currentSchool: school, expanded: false) //This will be the view that you want to display to the user
                     }.listRowInsets(EdgeInsets())
                         .listRowSeparatorTint(.white)
