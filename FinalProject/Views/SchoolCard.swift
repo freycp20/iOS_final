@@ -27,18 +27,45 @@ struct SchoolCard: View {
                     .foregroundColor(.white)
                     .font(.title2)
                     .bold()
+                    .shadow(color: .gray, radius: 5, x: 0, y: 0)
                     .padding()
             }
-            if expanded {
-                HStack {
-                    Text("Average GPA: \(currentSchool.meta_data.average_gpa, specifier: "%.2f")")
-                    Text("Average SAT: \(currentSchool.meta_data.average_sat)")
-                }.padding(30)
+            HStack(alignment:.top, spacing:0) {
+                VStack(alignment:.leading, spacing: 0) {
+                    Text("Average GPA")
+                        .font(.title2)
+                        .bold()
+                        .padding(.bottom, 5)
+
+                    Text("\(currentSchool.meta_data.average_gpa, specifier: "%.2f")")
+                        .font(.caption)
+                        .padding(.bottom, 20)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+
+                Divider().frame(height: 60)
+                VStack(alignment:.leading, spacing: 0) {
+                    Text("Average SAT")
+                        .font(.title2)
+                        .bold()
+                        .padding(.bottom, 5)
+
+                    Text("\(currentSchool.meta_data.average_sat)")
+                        .font(.caption)
+                        .padding(.bottom, 20)
+
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+//                .padding(.bottom, 20)
+//                .background(.green)
+//                .padding(10)
             }
+//            .frame(minWidth: 0, maxWidth: .infinity)
+
         }
         .background(RoundedRectangle(cornerRadius: CGFloat(VM.corner_radius)).fill(.white))
         .clipped()
-        .modifier(CustomFrameModifier(active: expanded))
+//        .modifier(CustomFrameModifier(active: expanded))
         .shadow(color: Color.gray, radius: CGFloat(VM.corner_radius), x: 0, y: 0)
     }
 }

@@ -48,10 +48,12 @@
             "location": {
                 "latitude": 40.1553,
                 "longitude": -76.9933
+
             },
             "student_to_faculty_ratio": "12:1",
             "state": "Pennsylvania",
             "type_of_community": "suburban"
+            }
         },
         "url": "https://www.messiah.edu",
         "image": "messiah_university"
@@ -67,10 +69,12 @@
                 "location": {
                     "latitude": 41.860985,
                     "longitude": -88.124168
+
                 },
                 "student_to_faculty_ratio": "10:1",
                 "state": "Illinois",
                 "type_of_community": "suburban"
+                }
             },
             "url": "https://www.wheaton.edu",
             "image": "wheaton_college"
@@ -94,6 +98,21 @@
             "url": "https://www.caltech.edu",
             "image": "california_institute_of_technology"
         }, {
+        "school_name": "University of California, Los Angeles",
+        "meta_data": {
+          "size": 31636,
+            "average_sat": 1455,
+            "average_gpa": 3.90,
+            "avg_cost_before_financial_aid": 68474,
+            "avg_cost_after_financial_aid": 15023,
+            "location": {
+                "latitude": 34.0700,
+                "longitude": -118.4398
+            }
+        },
+        "url": "https://www.ucla.edu",
+        "image": "university_of_California_Los_Angeles"
+    }, {
         "school_name": "Taylor University",
         "meta_data": {
           "size": 1755,
@@ -104,10 +123,12 @@
             "location": {
                 "latitude": 40.4548,
                 "longitude": -85.4917
+
             },
             "student_to_faculty_ratio": "12:1",
             "state": "Indiana",
             "type_of_community": "rural"
+            }
         },
         "url": "https://www.taylor.edu",
         "image": "taylor_university"
@@ -127,6 +148,7 @@
             "student_to_faculty_ratio": "19:1",
             "state": "Ohio",
             "type_of_community": "city"
+            }
         },
         "url": "https://www.uc.edu",
         "image": "university_of_cincinnati"
@@ -146,6 +168,9 @@
             "student_to_faculty_ratio": "8:1",
             "state": "Michigan",
             "type_of_community": "rural"
+
+            }
+
         },
       "url": "https://www.hillsdale.edu",
         "image": "hillsdale_college"
@@ -165,6 +190,7 @@
             "student_to_faculty_ratio": "16:1",
             "state": "Ohio",
             "type_of_community": "rural"
+            }
         },
       "url": "https://www.cedarville.edu",
         "image": "cedarville_university"
@@ -183,6 +209,7 @@
             "student_to_faculty_ratio": "7:1",
             "state": "Massachusetts",
             "type_of_community": "urban"
+            }
         },
       "url": "https://www.harvard.edu",
         "image": "harvard_university"
@@ -202,6 +229,7 @@
             "student_to_faculty_ratio": "5:1",
             "state": "New Jersey",
             "type_of_community": "suburban"
+            }
         },
       "url": "https://www.princeton.edu",
         "image": "princeton_university"
@@ -221,6 +249,7 @@
             "student_to_faculty_ratio": "5:1",
             "state": "California",
             "type_of_community": "suburban"
+            }
         },
       "url": "https://www.stanford.edu",
         "image": "stanford_university"
@@ -240,6 +269,7 @@
             "student_to_faculty_ratio": "3:1",
             "state": "Massachusetts",
             "type_of_community": "city"
+            }
         },
       "url": "https://www.mit.edu",
         "image": "massachusetts_institute_of_technology"
@@ -255,10 +285,12 @@
             "location": {
                 "latitude": 36.80064,
                 "longitude": -76.19455
+
             },
             "student_to_faculty_ratio": "21:1",
             "state": "Virginia",
             "type_of_community": "suburban"
+            }
         },
       "url": "https://explore.regent.edu",
         "image": "regent_university"
@@ -277,6 +309,7 @@
             "student_to_faculty_ratio": "18:1",
             "state": "California",
             "type_of_community": "city"
+            }
         },
       "url": "https://www.ucla.edu",
         "image": "university_of_California_Los_Angeles"

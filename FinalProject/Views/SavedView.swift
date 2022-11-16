@@ -10,19 +10,30 @@ import SwiftUI
 struct SavedView: View {
     @EnvironmentObject var VM : ViewModel
     var body: some View {
+        NavigationView {
         VStack {
-            Text("Saved Schools")
-                .font(.largeTitle)
-                .bold()
-                .padding()
-            ScrollView {
-                ForEach(0..<VM.saved_schools.count, id: \.self) { idx in
-                    let school = VM.saved_schools[idx]
-                    ListSchoolView(currentSchool: school, index: idx,  expanded: false)
-                }
+            List {
+                ForEach(VM.saved_schools) { school in
+                    ZStack {
+                        NavigationLink(destination: Text("pass")) { EmptyView() }.opacity(0.0)
+                        ListSchoolView(currentSchool: school, expanded: false) //This will be the view that you want to display to the user
+                    }.listRowInsets(EdgeInsets())
+                        .listRowSeparatorTint(.white)
+//                    NavigationLink {
+//                        Text("pass")
+//                    } label: {
+//                        ListSchoolView(currentSchool: school, expanded: false)
+//
+//                    }
+                }.onDelete(perform: delete)
             }
+            .listStyle(PlainListStyle())
+        }.navigationTitle("Saved Schools")
         }
     }
+    func delete(at offsets: IndexSet) {
+        VM.saved_schools.remove(atOffsets: offsets)
+        }
 }
 
 struct SavedView_Previews: PreviewProvider {

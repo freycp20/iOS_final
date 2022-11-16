@@ -16,9 +16,9 @@ struct MenuItem: Identifiable {
 }
 
 var userActions: [MenuItem] = [
-    MenuItem(id: 4001, icon: "person.circle.fill", text: "My Account"),
-    MenuItem(id: 4002, icon: "bag.fill", text: "My Orders"),
-    MenuItem(id: 4003, icon: "gift.fill", text: "Wishlist"),
+    MenuItem(id: 4001, icon: "graduationcap", text: "Undergrad Schools"),
+    MenuItem(id: 4002, icon: "graduationcap.fill", text: "Graduate Schools"),
+//    MenuItem(id: 4003, icon: "gift.fill", text: "Wishlist"),
 ]
 
 var profileActions: [MenuItem] = [
@@ -27,16 +27,20 @@ var profileActions: [MenuItem] = [
 ]
 
 struct SideMenu: View {
+    @EnvironmentObject var VM : ViewModel
+    
     @Binding var isSidebarVisible: Bool
     var sideBarWidth = UIScreen.main.bounds.size.width * 0.6
-    var menuColor: Color = Color(.init(red: 52 / 255, green: 70 / 255, blue: 182 / 255, alpha: 1))
+//    var menuColor: Color = Color(.init(red: 80 / 255, green: 70 / 255, blue: 182 / 255, alpha: 1))
+    var menuColor: Color = Color.clear
+//    Color(.init(red: 52 / 255, green: 70 / 255, blue: 182 / 255, alpha: 1))
     
     var body: some View {
         ZStack {
             GeometryReader { _ in
                 EmptyView()
             }
-            .background(.black.opacity(0.6))
+            .background(.black.opacity(0.7))
             .opacity(isSidebarVisible ? 1 : 0)
             .animation(.easeInOut.delay(0.2), value: isSidebarVisible)
             .onTapGesture {
@@ -49,36 +53,64 @@ struct SideMenu: View {
     }
     
     var content: some View {
-        HStack(alignment: .top) {
-            ZStack(alignment: .top) {
+        
+
+//        ZStack {
+//            MenuChevron
+//        VStack {
+//            HStack{
+//                Button {
+//                    //test
+//                } label: {
+//                    Text("test")
+//                }
+//            }
+//            VStack {
+//                Text("Undergraduate Schools")
+//                Text("Graduate Schools")
+//            }
+//        }.opacity(isSidebarVisible ? 1 : 0)
+//        .animation(.default, value: isSidebarVisible)
+//        }
+        VStack(alignment:.center) {
+            ZStack() {
+//                ZStack
                 menuColor
-                MenuChevron
+//                MenuChevron
                 
-                VStack(alignment: .leading, spacing: 20) {
-                    userProfile
+
+                VStack() {
+                    Text("Categories")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title)
+//                    userProfile
                     Divider()
                     MenuLinks(items: userActions)
-                    Divider()
-                    MenuLinks(items: profileActions)
-                }
-                .padding(.top, 80)
-                .padding(.horizontal, 40)
+                    Spacer()
+//                    Divider()
+//                    MenuLinks(items: profileActions)
+                }.padding(.top, 80)
+//                .padding(.top, 60)
+//                .padding(.horizontal, 40)
+                .opacity(isSidebarVisible ? 1 : 0)
             }
-            .frame(width: sideBarWidth)
-            .offset(x: isSidebarVisible ? 0 : -sideBarWidth)
-            .animation(.default, value: isSidebarVisible)
+//            .frame(width: sideBarWidth)
+//            .offset(x: isSidebarVisible ? 0 : -sideBarWidth)
             
-            Spacer()
+            .animation(.default, value: isSidebarVisible)
+
+//            Spacer()
         }
     }
     
     var MenuChevron: some View {
-        ZStack {
+        ZStack () {
             RoundedRectangle(cornerRadius: 18)
-                .fill(menuColor)
+                .fill(.white)
                 .frame(width: 60, height: 60)
                 .rotationEffect(Angle(degrees: 45))
-                .offset(x: isSidebarVisible ? -18 : -10)
+//                .offset(x: isSidebarVisible ? -18 : -10)
                 .onTapGesture {
                     isSidebarVisible.toggle()
                 }
@@ -86,10 +118,10 @@ struct SideMenu: View {
             Image(systemName: "chevron.right")
                 .foregroundColor(secondaryColor)
                 .rotationEffect(isSidebarVisible ? Angle(degrees: 180) : Angle(degrees: 0))
-                .offset(x: isSidebarVisible ? -4 : 8)
+//                .offset(x: isSidebarVisible ? -4 : 8)
                 .foregroundColor(.blue)
         }
-        .offset(x: sideBarWidth / 2, y: 40)
+//        .offset(x: sideBarWidth / 2, y: 80)
         .animation(.default, value: isSidebarVisible)
     }
     
@@ -110,7 +142,7 @@ struct SideMenu: View {
                 .aspectRatio(3 / 2, contentMode: .fill)
                 .shadow(radius: 4)
                 .padding(.trailing, 18)
-                
+
                 VStack(alignment: .leading, spacing: 6) {
                     Text("John Doe")
                         .foregroundColor(.white)
