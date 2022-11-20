@@ -73,21 +73,11 @@ struct ExploreView: View {
                         } label: {
                             if (cardChange) {
                                 CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
-//                                    .overlay(.green).clipped()
-//                                    .overlay(self.overlay ? RoundedRectangle(cornerRadius: 10).fill(Color(red: self.green ? 0 : 1, green: self.green ? 1 : 0, blue: 0, opacity: 0.6)) : RoundedRectangle(cornerRadius: 10).fill(Color.clear))
                                     .transition(transition)
                                     
 //                                    .foregroundColor(Color(red: 1.0, green: 0, blue: 1.0, opacity: 0.2))
                             } else {
                                 CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
-
-//                                    .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
-//                                        Button {
-//                                            print("working")
-//                                        } label: {
-//                                            Image(systemName: "x.square.fill").foregroundColor(.white)
-//                                        }.background(.red)
-//                                    })
                                     .transition(transition)
                                     
                             }
