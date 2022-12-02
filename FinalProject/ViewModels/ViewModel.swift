@@ -8,13 +8,20 @@
 import Foundation
 
 class ViewModel : ObservableObject{
-    
+    @Published var categories : [String : [School]] = [String : [School]]()
+    @Published var catChoice : String  = "undergrad_schools"
     @Published var undergrad_schools : [School] = [School]()
     @Published var grad_schools : [School] = [School]()
     @Published var corner_radius = 15
     
+    var choiceArr : [School] {
+        get {
+            return categories[catChoice] ?? [School]()
+        }
+    }
+    
     @Published var saved_schools : [School] = [School]()
-//    @Published var bShowName = true
+    @Published var index : Int = 0 //    @Published var bShowName = true
 //    @Published var bShowAddress = true
     
     
@@ -53,6 +60,8 @@ class ViewModel : ObservableObject{
                 for index in 0..<json_data.graduate_schools.count {
                     json_data.graduate_schools[index].id = UUID()
                 }
+                categories["undergrad_schools"] = json_data.undergraduate_schools
+                categories["grad_schools"] = json_data.graduate_schools
                 undergrad_schools = json_data.undergraduate_schools
                 grad_schools = json_data.graduate_schools
                 print(undergrad_schools)

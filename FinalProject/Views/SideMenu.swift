@@ -13,23 +13,25 @@ struct MenuItem: Identifiable {
     var id: Int
     var icon: String
     var text: String
+    var category: String
 }
 
 var userActions: [MenuItem] = [
-    MenuItem(id: 4001, icon: "graduationcap", text: "Undergrad Schools"),
-    MenuItem(id: 4002, icon: "graduationcap.fill", text: "Graduate Schools"),
+    MenuItem(id: 4001, icon: "graduationcap", text: "Undergrad Schools", category: "undergrad_schools"),
+    MenuItem(id: 4002, icon: "graduationcap.fill", text: "Graduate Schools", category: "grad_schools"),
 //    MenuItem(id: 4003, icon: "gift.fill", text: "Wishlist"),
 ]
 
 var profileActions: [MenuItem] = [
-    MenuItem(id: 4004, icon: "wrench.and.screwdriver.fill", text: "Settings"),
-    MenuItem(id: 4005, icon: "iphone.and.arrow.forward", text: "Logout"),
+    MenuItem(id: 4004, icon: "wrench.and.screwdriver.fill", text: "Settings", category: "settings"),
+    MenuItem(id: 4005, icon: "iphone.and.arrow.forward", text: "Logout", category: "settings"),
 ]
 
 struct SideMenu: View {
     @EnvironmentObject var VM : ViewModel
     
     @Binding var isSidebarVisible: Bool
+    @Binding var index : Int
     var sideBarWidth = UIScreen.main.bounds.size.width * 0.6
 //    var menuColor: Color = Color(.init(red: 80 / 255, green: 70 / 255, blue: 182 / 255, alpha: 1))
     var menuColor: Color = Color.clear
@@ -86,7 +88,7 @@ struct SideMenu: View {
                         .font(.title)
 //                    userProfile
                     Divider()
-                    MenuLinks(items: userActions)
+                    MenuLinks(items: userActions, index: $index, isSideBarOpened: $isSidebarVisible)
                     Spacer()
 //                    Divider()
 //                    MenuLinks(items: profileActions)
@@ -160,10 +162,12 @@ struct SideMenu: View {
 
 struct MenuLinks: View {
     var items: [MenuItem]
+    @Binding var index : Int
+    @Binding var isSideBarOpened : Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
             ForEach(items) { item in
-                menuLink(icon: item.icon, text: item.text)
+                menuLink(icon: item.icon, text: item.text, category: item.category, index: $index, isSideBarOpened: $isSideBarOpened)
             }
         }
         .padding(.vertical, 14)
@@ -174,6 +178,10 @@ struct MenuLinks: View {
 struct menuLink: View {
     var icon: String
     var text: String
+    var category: String
+    @Binding var index : Int
+    @Binding var isSideBarOpened : Bool
+    @EnvironmentObject var VM : ViewModel
     var body: some View {
         HStack {
             Image(systemName: icon)
@@ -186,7 +194,12 @@ struct menuLink: View {
                 .font(.body)
         }
         .onTapGesture {
-            print("Tapped on \(text)")
+            if (VM.catChoice != category) {
+                VM.catChoice = category
+                index = 0
+                print("Tapped on \(text)")
+                isSideBarOpened.toggle()
+            }
         }
     }
 }

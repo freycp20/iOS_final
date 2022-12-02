@@ -9,15 +9,22 @@ import SwiftUI
 
 struct ExploreView: View {
     @EnvironmentObject var VM : ViewModel
-    @State var index : Int = 0
     @State private var isSideBarOpened = false
     @State private var cardChange = true
+    @State var index = 0
     
     var currentSchool : School {
         get {
-            return VM.undergrad_schools[index]
+            let index = self.index < VM.choiceArr.count ? self.index : VM.choiceArr.count-1
+            return VM.choiceArr[index]
         }
     }
+    var nextSchool : School {
+        get {
+            return VM.choiceArr[self.index+1]
+        }
+    }
+    
     @State var insert : AnyTransition = .scale
     @State var remove : AnyTransition = .slide
     
@@ -35,18 +42,18 @@ struct ExploreView: View {
                 ZStack {
                     VStack {
                         HStack {
-                        Button {
-                            //nothing yet
-                            isSideBarOpened.toggle()
-                        } label: {
-
-                            Image(systemName: "line.3.horizontal")
-                                .resizable()
-//                                .aspectRatio(contentMode: .fill)
-//                                .padding(20)
-                                .frame(width: 25, height:15)
-                            
-                        }
+                            Button {
+                                //nothing yet
+                                isSideBarOpened.toggle()
+                            } label: {
+                                
+                                Image(systemName: "line.3.horizontal")
+                                    .resizable()
+                                //                                .aspectRatio(contentMode: .fill)
+                                //                                .padding(20)
+                                    .frame(width: 25, height:15)
+                                
+                            }
                             Spacer()
                         }.padding(.leading, 15)
                         Spacer()
@@ -56,14 +63,12 @@ struct ExploreView: View {
                         
                         Button {
                             // go to the previous image
-                        if (index - 1 < 0) {
-                            index = 0
-                        } else {
-                            index -= 1
-                            self.remove = .bottomslide
-                            cardChange.toggle()
-                        }
-
+                            if (self.index - 1 < 0) {
+                                self.index = 0
+                            } else {
+                                self.index -= 1
+                                cardChange.toggle()
+                            }
                         } label: {
                             Image(systemName: "arrow.up.to.line.compact")
                         }.foregroundColor(.black)
@@ -72,67 +77,92 @@ struct ExploreView: View {
                             DetailView(VM: _VM, currentSchool: currentSchool)
                         } label: {
                             if (cardChange) {
-                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
-                                    .transition(transition)
+                                ZStack {
+                                    if (index < VM.choiceArr.count && VM.choiceArr.count != 0) {
+                                        if (index + 1 < VM.choiceArr.count) {
+                                            CardView(currentSchool: nextSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                        } else {
+                                            Text("No schools available")
+                                        }
+                                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                    } else {
+                                        Text("No schools available")
+                                    }
                                     
-//                                    .foregroundColor(Color(red: 1.0, green: 0, blue: 1.0, opacity: 0.2))
+                                }
                             } else {
-                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
-                                    .transition(transition)
-                                    
-                            }
-                        }.animation(.default.speed(1), value: cardChange)
-                            
-                        .foregroundColor(.black)
-                        
-                        
-                        
-                        HStack (spacing:0) {
-                            Button {
-                                // what the button going to do
-                                if (index + 1 > VM.undergrad_schools.count-1) {
-                                    index = VM.undergrad_schools.count-1
-                                } else {
-                                    index += 1
-                                    self.remove = .backslide
-//                                    self.overlay = true
-                                    cardChange.toggle()
-//                                    self.overlay = false
-                                    
-                                }
+                                ZStack {
+                                    if (index < VM.choiceArr.count && VM.choiceArr.count != 0) {
+                                        if (index + 1 < VM.choiceArr.count) {
+                                            CardView(currentSchool: nextSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                        } else {
+                                            Text("No schools available")
+                                        }
+                                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                    } else {
+                                        Text("No schools available")
+                                    }
 
-                            } label: {
-                                // what it look like
-                                //                            Text("bad")
-                                Image(systemName: "trash")
-                                    .frame(width:geo.size.width/3.5)
-                                    .padding([.top, .bottom], geo.size.height/35)
-                                    .foregroundColor(.white)
-                                
-                            }.buttonStyle(GradientButtonStyle(color: Color.red, corners: [.topLeft, .bottomLeft]))
-                            
-                            Button {
-                                if (!VM.saved_schools.contains(currentSchool)) {
-                                    VM.saved_schools.append(currentSchool)
                                 }
-                                if (index + 1 > VM.undergrad_schools.count-1) {
-                                    index = VM.undergrad_schools.count-1
-                                } else {
-                                    index += 1
-                                    self.remove = .slide
-//                                    self.overlay = true
-                                    cardChange.toggle()
-                                }
-                            } label: {
-                                Image(systemName: "bookmark")
-                                    .frame(width:geo.size.width/3.5)
-                                    .padding([.top, .bottom], geo.size.height/35)
-                                    .foregroundColor(.white)
-                            }.buttonStyle(GradientButtonStyle(color: Color.green, corners: [.topRight, .bottomRight]))
-                        }.padding(.top, geo.size.height/30)
-                        Text("\(index + 1) of \(VM.undergrad_schools.count)")
+                            }
+                            //                            if (cardChange) {
+                            //                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
+                            //                                    .transition(transition)
+                            ////                                    .foregroundColor(Color(red: 1.0, green: 0, blue: 1.0, opacity: 0.2))
+                            //                            } else {
+                            //                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
+                            //                                    .transition(transition)
+                            //                            }
+                        }
+                        .foregroundColor(.black)
+                        //                        HStack (spacing:0) {
+                        //                            Button {
+                        //                                // what the button going to do
+                        //                                if (index + 1 > VM.undergrad_schools.count-1) {
+                        //                                    index = VM.undergrad_schools.count-1
+                        //                                } else {
+                        //                                    index += 1
+                        //                                    self.remove = .backslide
+                        ////                                    self.overlay = true
+                        //                                    cardChange.toggle()
+                        ////                                    self.overlay = false
+                        //
+                        //                                }
+                        //
+                        //                            } label: {
+                        //                                // what it look like
+                        //                                //                            Text("bad")
+                        //                                Image(systemName: "trash")
+                        //                                    .frame(width:geo.size.width/3.5)
+                        //                                    .padding([.top, .bottom], geo.size.height/35)
+                        //                                    .foregroundColor(.white)
+                        //
+                        //                            }.buttonStyle(GradientButtonStyle(color: Color.red, corners: [.topLeft, .bottomLeft]))
+                        
+//                                                    Button {
+//                                                        if (!VM.saved_schools.contains(currentSchool)) {
+//                                                            VM.saved_schools.append(currentSchool)
+//                                                        }
+//                                                        if (index + 1 > VM.undergrad_schools.count-1) {
+//                                                            index = VM.undergrad_schools.count-1
+//                                                        } else {
+//                                                            index += 1
+//                                                        }
+//                                                            self.remove = .slide
+//                        //                                    self.overlay = true
+//                                                            cardChange.toggle()
+//                                                        }
+//                                                    } label: {
+//                                                        Image(systemName: "bookmark")
+//                                                            .frame(width:geo.size.width/3.5)
+//                                                            .padding([.top, .bottom], geo.size.height/35)
+//                                                            .foregroundColor(.white)
+//                                                    }.buttonStyle(GradientButtonStyle(color: Color.green, corners: [.topRight, .bottomRight]))
+//                                                }.padding(.top, geo.size.height/30)
+                        Text(self.index < VM.choiceArr.count ? "\(self.index + 1) of \(VM.choiceArr.count)" : "")
                             .font(.caption)
                             .padding(.top, 10)
+                            .zIndex(-100.0)
                         Spacer()
                         
                     }.animation(.default, value: true)
@@ -143,7 +173,7 @@ struct ExploreView: View {
                     //                .edgesIgnoringSafeArea([.top, .bottom])
                 }
             }
-                        SideMenu(isSidebarVisible: $isSideBarOpened)
+            SideMenu(isSidebarVisible: $isSideBarOpened, index: $index)
             
             
         }
