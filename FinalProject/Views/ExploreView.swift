@@ -35,18 +35,18 @@ struct ExploreView: View {
                 ZStack {
                     VStack {
                         HStack {
-                        Button {
-                            //nothing yet
-                            isSideBarOpened.toggle()
-                        } label: {
-
-                            Image(systemName: "line.3.horizontal")
-                                .resizable()
-//                                .aspectRatio(contentMode: .fill)
-//                                .padding(20)
-                                .frame(width: 25, height:15)
-                            
-                        }
+                            Button {
+                                //nothing yet
+                                isSideBarOpened.toggle()
+                            } label: {
+                                
+                                Image(systemName: "line.3.horizontal")
+                                    .resizable()
+                                //                                .aspectRatio(contentMode: .fill)
+                                //                                .padding(20)
+                                    .frame(width: 25, height:15)
+                                
+                            }
                             Spacer()
                         }.padding(.leading, 15)
                         Spacer()
@@ -56,43 +56,30 @@ struct ExploreView: View {
                         
                         Button {
                             // go to the previous image
-                        if (index - 1 < 0) {
-                            index = 0
-                        } else {
-                            index -= 1
-                            self.remove = .bottomslide
-                            cardChange.toggle()
-                        }
-
+                            if (index - 1 < 0) {
+                                index = 0
+                            } else {
+                                index -= 1
+                                self.remove = .bottomslide
+                                cardChange.toggle()
+                            }
+                            
                         } label: {
                             Image(systemName: "arrow.up.to.line.compact")
                         }.foregroundColor(.black)
                         Spacer()
                         NavigationLink {
                             DetailView(VM: _VM, currentSchool: currentSchool)
-                        } label: {
-                            if (cardChange) {
-                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
-//                                    .overlay(.green).clipped()
-//                                    .overlay(self.overlay ? RoundedRectangle(cornerRadius: 10).fill(Color(red: self.green ? 0 : 1, green: self.green ? 1 : 0, blue: 0, opacity: 0.6)) : RoundedRectangle(cornerRadius: 10).fill(Color.clear))
-                                    .transition(transition)
-                                    
-//                                    .foregroundColor(Color(red: 1.0, green: 0, blue: 1.0, opacity: 0.2))
-                            } else {
-                                CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, changing: $overlay)
-
-//                                    .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
-//                                        Button {
-//                                            print("working")
-//                                        } label: {
-//                                            Image(systemName: "x.square.fill").foregroundColor(.white)
-//                                        }.background(.red)
-//                                    })
-                                    .transition(transition)
-                                    
-                            }
-                        }.animation(.default.speed(1), value: cardChange)
-                            
+                    } label: {
+                        if (cardChange) {
+                            CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, profile: false)
+                                .transition(transition)
+                        } else {
+                            CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, profile: false)
+                                .transition(transition)
+                        }
+                    }.animation(.default.speed(1), value: cardChange)
+                    
                         .foregroundColor(.black)
                         
                         
@@ -105,12 +92,12 @@ struct ExploreView: View {
                                 } else {
                                     index += 1
                                     self.remove = .backslide
-//                                    self.overlay = true
+                                    //                                    self.overlay = true
                                     cardChange.toggle()
-//                                    self.overlay = false
+                                    //                                    self.overlay = false
                                     
                                 }
-
+                                
                             } label: {
                                 // what it look like
                                 //                            Text("bad")
@@ -130,7 +117,7 @@ struct ExploreView: View {
                                 } else {
                                     index += 1
                                     self.remove = .slide
-//                                    self.overlay = true
+                                    //                                    self.overlay = true
                                     cardChange.toggle()
                                 }
                             } label: {
@@ -153,7 +140,7 @@ struct ExploreView: View {
                     //                .edgesIgnoringSafeArea([.top, .bottom])
                 }
             }
-                        SideMenu(isSidebarVisible: $isSideBarOpened)
+            SideMenu(isSidebarVisible: $isSideBarOpened)
             
             
         }
