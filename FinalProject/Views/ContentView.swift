@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(red: 246, green: 246, blue: 246, alpha: 1)
+//        UITabBar.appearance().backgroundColor = UIColor(red: 246, green: 246, blue: 246, alpha: 1)
+
     }
+    
     var body: some View {
+        
         TabView {
 //            ZStack {
 //                Color.green
@@ -32,7 +36,8 @@ struct ContentView: View {
                     Image(systemName: "person.circle")
                     Text("Profile")
                 }
-        }.background(.gray)
+        }
+//        SettingsView()
     }
 }
 

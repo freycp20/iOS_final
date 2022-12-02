@@ -13,6 +13,7 @@ struct FinalProjectApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(ViewModel())
+//                .preferredColorScheme(.dark)
         }
     }
 }

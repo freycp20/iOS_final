@@ -16,10 +16,13 @@ struct DetailView: View {
     @State var showingWebSheet : Bool = false
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("\(currentSchool.school_name)")
+                .font(.system(size: 34, weight: .heavy))
+                .padding(.leading, 15)
             Divider()
                 .foregroundColor(.black)
-            
+            ScrollView{
             VStack {
                 
                 HStack{
@@ -213,7 +216,7 @@ struct DetailView: View {
                                 HStack{
                                     VStack(alignment: .leading){
                                         HStack{
-                                            Image(systemName: "wifi")
+                                            Image(systemName: "globe.americas.fill")
                                             Text("Website")
                                                 .bold()
                                         }
@@ -258,15 +261,37 @@ struct DetailView: View {
                 }
                 
                 Spacer()
+            }.padding(.top, 10)
             }
-        }.sheet(isPresented: $showMap) {
+        }
+        .sheet(isPresented: $showMap) {
             MapView(showMap: $showMap, currentSchool: currentSchool)
             
         }
-        .navigationTitle("\(currentSchool.school_name)")
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Spacer()
+                    Button {
+                        //somethinbg here
+                        if VM.favSchool != nil {
+                            if VM.favSchool == currentSchool {
+                                VM.favSchool = nil
+                            } else {
+                                VM.favSchool = currentSchool
+                            }
+                        }else {
+                            VM.favSchool = currentSchool
+                        }
+                    } label: {
+                        Image(systemName: (VM.favSchool != nil && VM.favSchool==currentSchool) ? "star.fill" : "star")
+                    }
+                }
+            }
+        }
+        .navigationBarTitle(Text(""), displayMode: .inline)
     }
 }
-
 
 
 

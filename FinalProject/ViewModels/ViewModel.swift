@@ -11,7 +11,9 @@ class ViewModel : ObservableObject{
     @Published var categories : [String : [School]] = [String : [School]]()
     @Published var catChoice : String  = "undergrad_schools"
     @Published var undergrad_schools : [School] = [School]()
-    @Published var grad_schools : [School] = [School]()
+    @Published var grad_schools : [gSchool] = [gSchool]()
+    @Published var majors: [String] = [String]()
+    @Published var states: [String] = [String]()
     @Published var corner_radius = 15
     
     var choiceArr : [School] {
@@ -20,9 +22,21 @@ class ViewModel : ObservableObject{
         }
     }
     
+    @Published var favSchool : School? = nil
     @Published var saved_schools : [School] = [School]()
     @Published var index : Int = 0 //    @Published var bShowName = true
 //    @Published var bShowAddress = true
+    @Published var darkMode : Bool = false
+    
+//    @Published var SATScore:  Int {
+//        willSet{
+//            
+//        }
+//        didSet{
+//            if par
+//        }
+//    }
+
     
     
     // construction method
@@ -64,8 +78,8 @@ class ViewModel : ObservableObject{
                 categories["grad_schools"] = json_data.graduate_schools
                 undergrad_schools = json_data.undergraduate_schools
                 grad_schools = json_data.graduate_schools
-                print(undergrad_schools)
-                print(grad_schools)
+                majors = json_data.major
+                states = json_data.state
             } catch {
                 print(error)
             }
@@ -73,7 +87,4 @@ class ViewModel : ObservableObject{
             
         }
     }
-//    func addPerson(r: Person){
-//        people.append(r)
-//    }
 }

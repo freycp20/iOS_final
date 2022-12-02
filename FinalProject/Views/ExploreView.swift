@@ -69,6 +69,7 @@ struct ExploreView: View {
                                 self.index -= 1
                                 cardChange.toggle()
                             }
+                            
                         } label: {
                             Image(systemName: "arrow.up.to.line.compact")
                         }.foregroundColor(.black)
