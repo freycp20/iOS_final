@@ -10,7 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var VM : ViewModel
     //        var currentSchool : School
-    
+    @State var indexPlaceholder : Int = 0
+    @State var changingPlaceholder : Bool = false
+
     @ViewBuilder
     var schoolContent : some View {
         
@@ -19,7 +21,7 @@ struct ProfileView: View {
             NavigationLink {
                 DetailView(currentSchool: school)
             } label: {
-                CardView(currentSchool: school, height: UIScreen.main.bounds.size.height/2.15, profile: true)
+                CardView(currentSchool: school, height: UIScreen.main.bounds.size.height/2.15, changing: $changingPlaceholder, index: $indexPlaceholder, profile: true)
                 
                 
             }

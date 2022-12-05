@@ -143,6 +143,7 @@ struct SettingsView: View {
     @State var Poptoggle : Bool = false
     @State var Statetoggle : Bool = false
     @State var DesiredState: String = "None"
+    
     var body: some View {
 //        NavigationView{
             ZStack{

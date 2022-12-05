@@ -13,7 +13,7 @@ struct SavedView: View {
         NavigationView {
         VStack {
             List {
-                ForEach(VM.saved_schools) { school in
+                ForEach(VM.cat_saved_schools[VM.catChoice]!) { school in
                     ZStack {
                         NavigationLink(destination: DetailView(currentSchool: school)) { EmptyView() }.opacity(0.0)
                         
@@ -33,7 +33,7 @@ struct SavedView: View {
         }
     }
     func delete(at offsets: IndexSet) {
-        VM.saved_schools.remove(atOffsets: offsets)
+        VM.cat_saved_schools[VM.catChoice]!.remove(atOffsets: offsets)
         }
 }
 

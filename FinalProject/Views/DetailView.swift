@@ -50,7 +50,8 @@ struct DetailView: View {
                         Text("Average SAT")
                             .font(.title2)
                             .bold()
-                        Text("\(currentSchool.meta_data.average_sat)")
+                        
+                        Text("\(currentSchool.meta_data.average_sat ?? 0)")
                             .font(.headline)
                             .foregroundColor(.secondary)
                     }.padding()

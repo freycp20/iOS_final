@@ -15,13 +15,13 @@ struct ExploreView: View {
     
     var currentSchool : School {
         get {
-            let index = self.index < VM.choiceArr.count ? self.index : VM.choiceArr.count-1
-            return VM.choiceArr[index]
+            let index = self.index < VM.filteredSchools.count ? self.index : VM.filteredSchools.count-1
+            return VM.filteredSchools[index]
         }
     }
     var nextSchool : School {
         get {
-            return VM.choiceArr[self.index+1]
+            return VM.filteredSchools[self.index+1]
         }
     }
     
@@ -55,7 +55,17 @@ struct ExploreView: View {
                                 
                             }
                             Spacer()
-                        }.padding(.leading, 15)
+                            NavigationLink{
+                                SettingsView()
+                            }label: {
+                                Image(systemName: "gear")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(.gray)
+                                    
+                            }
+
+                        }.padding([.leading, .trailing], 15)
                         Spacer()
                     }
                     
@@ -79,13 +89,13 @@ struct ExploreView: View {
                         } label: {
                             if (cardChange) {
                                 ZStack {
-                                    if (index < VM.choiceArr.count && VM.choiceArr.count != 0) {
-                                        if (index + 1 < VM.choiceArr.count) {
-                                            CardView(currentSchool: nextSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                    if (index < VM.filteredSchools.count && VM.filteredSchools.count != 0) {
+                                        if (index + 1 < VM.filteredSchools.count) {
+                                            CardView(currentSchool: nextSchool, height: geo.size.height*2/3, offset: CGSize.zero, changing: $cardChange, index: $index)
                                         } else {
                                             Text("No schools available")
                                         }
-                                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3, offset: CGSize.zero, changing: $cardChange, index: $index)
                                     } else {
                                         Text("No schools available")
                                     }
@@ -93,13 +103,13 @@ struct ExploreView: View {
                                 }
                             } else {
                                 ZStack {
-                                    if (index < VM.choiceArr.count && VM.choiceArr.count != 0) {
-                                        if (index + 1 < VM.choiceArr.count) {
-                                            CardView(currentSchool: nextSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                    if (index < VM.filteredSchools.count && VM.filteredSchools.count != 0) {
+                                        if (index + 1 < VM.filteredSchools.count) {
+                                            CardView(currentSchool: nextSchool, height: geo.size.height*2/3, offset: CGSize.zero, changing: $cardChange, index: $index)
                                         } else {
                                             Text("No schools available")
                                         }
-                                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3.5, offset: CGSize.zero, changing: $cardChange, index: $index)
+                                        CardView(currentSchool: currentSchool, height: geo.size.height*2/3, offset: CGSize.zero, changing: $cardChange, index: $index)
                                     } else {
                                         Text("No schools available")
                                     }
@@ -160,7 +170,7 @@ struct ExploreView: View {
 //                                                            .foregroundColor(.white)
 //                                                    }.buttonStyle(GradientButtonStyle(color: Color.green, corners: [.topRight, .bottomRight]))
 //                                                }.padding(.top, geo.size.height/30)
-                        Text(self.index < VM.choiceArr.count ? "\(self.index + 1) of \(VM.choiceArr.count)" : "")
+                        Text(self.index < VM.filteredSchools.count ? "\(self.index + 1) of \(VM.filteredSchools.count)" : "")
                             .font(.caption)
                             .padding(.top, 10)
                             .zIndex(-100.0)

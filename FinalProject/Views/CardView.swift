@@ -14,9 +14,8 @@ struct CardView: View {
     
     var currentSchool : School
     var height : CGFloat
-    @State var offset : CGSize
+    @State var offset : CGSize = CGSize.zero
     @Binding var changing : Bool
-    
     @Binding var index : Int
     @State var completed : Bool = false
     
@@ -78,7 +77,8 @@ struct CardView: View {
                     .bold()
                     .padding(.bottom, 5)
                     .multilineTextAlignment(.leading)
-                Text("\(currentSchool.meta_data.average_sat)")
+                
+                Text("\(currentSchool.meta_data.average_sat ?? 0)")
                     .font(.headline)
                     .foregroundColor(.secondary)
                 
@@ -91,8 +91,7 @@ struct CardView: View {
         }.background(.white)
             .fixedSize(horizontal: false, vertical: true)
     }
-    
-    var body: some View {
+    var cardContent : some View {
         ZStack {
             VStack(spacing:0) {
                 ZStack(alignment: .topLeading) {
@@ -126,41 +125,56 @@ struct CardView: View {
         .offset(x: offset.width, y: offset.height*0.4)
         .foregroundColor(color.opacity(0.9))
         .rotationEffect(.degrees(Double(offset.width/40)))
-        .gesture(
-            DragGesture()
-                .onChanged { gesture in
-                    offset = gesture.translation
-//                    withAnimation {
+    }
+    
+    @ViewBuilder
+    var optionalDrag : some View {
+        if (profile) {
+            cardContent
+        } else {
+            cardContent
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        offset = gesture.translation
+                        //                    withAnimation {
                         changeColor(width: offset.width)
-//                    }
-                } .onEnded{ _ in
-                    completed = false
-                    withAnimation {
-                        swipeCard(width: offset.width)
+                        //                    }
+                    } .onEnded{ _ in
+                        completed = false
+                        withAnimation {
+                            swipeCard(width: offset.width)
+                        }
                     }
+            )
+            .onAnimationCompleted(for: offset.width) {
+                if completed {
+                    print("times called \(index)")
+                    print()
+                    //                presentationMode.wrappedValue.dismiss()
+                    index += 1
+                    changing.toggle()
+                    
                 }
-        )
-        .onAnimationCompleted(for: offset.width) {
-            if completed {
-                print("times called \(index)")
-                print()
-//                presentationMode.wrappedValue.dismiss()
-                index += 1
-                changing.toggle()
-                
             }
         }
     }
+    var body: some View {
+        optionalDrag
+    }
     func swipeCard(width: CGFloat) {
         switch width {
-        case -500...(-150):
+        case -500...(-100):
             offset = CGSize(width: -500, height: 0)
             completed = true
-        case 150...500:
+            if (VM.choiceSavedArr.contains(currentSchool)) {
+                VM.cat_saved_schools[VM.catChoice]!.remove(at: VM.choiceSavedArr.firstIndex(of: currentSchool)!)
+            }
+        case 100...500:
             offset = CGSize(width: 500, height: 0)
             completed = true
-            if (!VM.saved_schools.contains(currentSchool)) {
-                VM.saved_schools.append(currentSchool)
+            if (!VM.choiceSavedArr.contains(currentSchool)) {
+                VM.cat_saved_schools[VM.catChoice]!.append(currentSchool)
             }
         default:
             offset = .zero
@@ -170,10 +184,10 @@ struct CardView: View {
     }
     func changeColor(width: CGFloat) {
         switch width {
-        case -500...(-150):
+        case -500...(-100):
             color = .red
             
-        case 150...500:
+        case 100...500:
             color = .green
         default:
             color = .black

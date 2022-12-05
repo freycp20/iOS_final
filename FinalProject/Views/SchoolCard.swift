@@ -50,7 +50,7 @@ struct SchoolCard: View {
                         .bold()
                         .padding(.bottom, 5)
 
-                    Text("\(currentSchool.meta_data.average_sat)")
+                    Text("\(currentSchool.meta_data.average_sat ?? 0)")
                         .font(.caption)
                         .padding(.bottom, 20)
 
