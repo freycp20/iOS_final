@@ -12,6 +12,7 @@ struct ProfileView: View {
     //        var currentSchool : School
     @State var indexPlaceholder : Int = 0
     @State var changingPlaceholder : Bool = false
+    @State var draggingPlaceholder : Bool = false
 
     @ViewBuilder
     var schoolContent : some View {
@@ -21,7 +22,7 @@ struct ProfileView: View {
             NavigationLink {
                 DetailView(currentSchool: school)
             } label: {
-                CardView(currentSchool: school, height: UIScreen.main.bounds.size.height/2.15, changing: $changingPlaceholder, index: $indexPlaceholder, profile: true)
+                CardView(currentSchool: school, height: UIScreen.main.bounds.size.height/2.15, changing: $changingPlaceholder, index: $indexPlaceholder, dragging: $draggingPlaceholder, profile: true)
                 
                 
             }

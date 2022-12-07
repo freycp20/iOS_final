@@ -9,15 +9,21 @@ import SwiftUI
 
 struct CardView: View {
     @EnvironmentObject var VM : ViewModel
-    @State private var color : Color = .black
+    @State private var color : Color = .clear
     @Environment(\.presentationMode) var presentationMode
     
+    @State var image : String = "trash.circle"
+    @State var message : String = ""
     var currentSchool : School
     var height : CGFloat
     @State var offset : CGSize = CGSize.zero
     @Binding var changing : Bool
     @Binding var index : Int
+    @Binding var dragging : Bool
+    
     @State var completed : Bool = false
+    
+    @State var animationStarted = false
     
 //    @Binding var changing : Bool
     var profile : Bool = false
@@ -43,13 +49,25 @@ struct CardView: View {
                 .padding()
                 .multilineTextAlignment(.leading)
         } else {
-            Text(currentSchool.school_name)
-                .foregroundColor(.white)
-                .font(.title2)
-                .bold()
-                .shadow(color: .black, radius: 5, x: 0, y: 0)
-                .padding()
-                .multilineTextAlignment(.leading)
+            HStack(alignment:.top) {
+                Text(currentSchool.school_name)
+                    .foregroundColor(.white)
+                    .font(.title2)
+                    .bold()
+                    .shadow(color: .black, radius: 5, x: 0, y: 0)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+                if (VM.choiceSavedArr.contains(currentSchool)) {
+                    Image(systemName: "bookmark.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                        .foregroundColor(.white)
+                        
+//                        .frame(width: 25, height: 25)
+                    
+                }
+            }.padding()
         }
     }
     var metrics : some View {
@@ -115,15 +133,37 @@ struct CardView: View {
             }
             .cornerRadius(10)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.3), lineWidth: 1)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.3), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(color.opacity(0.1))
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(color, lineWidth: 8)
+//                    HStack {
+//                        Image(systemName: image)
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width:30)
+//                            .foregroundColor(color)
+//                        Text(message)
+//                            .font(.largeTitle)
+//                            .bold()
+//                            .foregroundColor(color)
+//                            .shadow(color: .gray, radius: 5)
+//                            .border(<#T##content: ShapeStyle##ShapeStyle#>)
+//
+//                    }
+                }
                 
-            )}
+            )
+//            color.opacity(0.1)
+        }
+        
         .cornerRadius(10)
-        .shadow(color: .gray, radius: 10, x: 0, y: 0)
         .padding([.top, .horizontal])
         .offset(x: offset.width, y: offset.height*0.4)
-        .foregroundColor(color.opacity(0.9))
+//        .foregroundColor(color.opacity(0.9))
         .rotationEffect(.degrees(Double(offset.width/40)))
     }
     
@@ -139,12 +179,16 @@ struct CardView: View {
                         offset = gesture.translation
                         //                    withAnimation {
                         changeColor(width: offset.width)
+                        dragging = true
+                        animationStarted = true
                         //                    }
                     } .onEnded{ _ in
                         completed = false
                         withAnimation {
                             swipeCard(width: offset.width)
                         }
+                        animationStarted = false
+//                        dragging = false
                     }
             )
             .onAnimationCompleted(for: offset.width) {
@@ -155,6 +199,9 @@ struct CardView: View {
                     index += 1
                     changing.toggle()
                     
+                }
+                if (!animationStarted) {
+                    dragging = false
                 }
             }
         }
@@ -186,11 +233,17 @@ struct CardView: View {
         switch width {
         case -500...(-100):
             color = .red
-            
+            message = "Discard!"
+            image = "trash.circle"
         case 100...500:
             color = .green
+            message = "Save!"
+            image = "checkmark.circle"
         default:
-            color = .black
+            color = .clear
+            
+            
+            message = ""
             
         }
     }
