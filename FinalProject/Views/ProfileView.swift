@@ -13,7 +13,6 @@ struct ProfileView: View {
     @State var indexPlaceholder : Int = 0
     @State var changingPlaceholder : Bool = false
     @State var draggingPlaceholder : Bool = false
-
     @ViewBuilder
     var schoolContent : some View {
         
@@ -52,15 +51,44 @@ struct ProfileView: View {
                     HStack{
                         Spacer()
                         VStack (alignment: .leading, spacing: 15){
-                            HStack{
-                                Image(systemName: "person.3.fill")
-                                    .font(.caption)
-                                Text("SAT: ")
-                                    .font(.title2)
-                                    .bold()
-                                Text("*SAT score*")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
+                            VStack(alignment: .leading, spacing: 15){
+                                HStack{
+                                    Image(systemName: "person.3.fill")
+                                        .font(.caption)
+                                    Text("SAT: ")
+                                        .font(.title2)
+                                        .bold()
+                                    if let score = VM.intSAT {
+                                        Text("\(score)")
+                                            .font(.headline)
+                                            .foregroundColor(.secondary)
+                                    } else {
+                                        Text("N/A")
+                                            .font(.headline)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    Spacer()
+                                    Divider()
+                                        .foregroundColor(.black)
+                                        .frame(height: 25)
+
+                                            Image(systemName: "person.3")
+                                                .font(.caption)
+                                            Text("GRE: ")
+                                                .font(.title2)
+                                                .bold()
+                                            if let score = VM.intGRE {
+                                                Text("\(score)")
+                                                    .font(.headline)
+                                                    .foregroundColor(.secondary)
+                                            } else {
+                                                Text("N/A")
+                                                    .font(.headline)
+                                                    .foregroundColor(.secondary)
+                                            }
+                                    Spacer()
+
+                                        }
                             }
                             Divider()
                             HStack{
@@ -69,20 +97,36 @@ struct ProfileView: View {
                                 Text("GPA: ")
                                     .font(.title2)
                                     .bold()
-                                Text("*GPA*")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
+                                
+                                let score = VM.doubleGPA
+                                let doubleStr = String(format: "%.2f", score ?? 0)
+                                
+                                if let doubleStr = VM.doubleGPA {
+                                    Text("\(doubleStr)")
+                                        .font(.headline)
+                                        .foregroundColor(.secondary)
+                                } else {
+                                    Text("N/A")
+                                        .font(.headline)
+                                        .foregroundColor(.secondary)
+                                }
                             }
                             Divider()
                             HStack{
-                                Image(systemName: "dollarsign.square.fill")
-                                    .font(.title2)
+                                Image(systemName: "book.fill")
+                                    .font(.title3)
                                 Text("Major: ")
                                     .font(.title2)
                                     .bold()
-                                Text("*MAJOR*")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
+                                if VM.DesiredMajor != "" {
+                                    Text("\(VM.DesiredMajor)")
+                                        .font(.headline)
+                                        .foregroundColor(.secondary)
+                                } else {
+                                    Text("N/A")
+                                        .font(.headline)
+                                        .foregroundColor(.secondary)
+                                }
                             }
                             Divider()
                             HStack{
@@ -91,9 +135,9 @@ struct ProfileView: View {
                                 Text("Saved Schools: ")
                                     .font(.title2)
                                     .bold()
-                                Text("*Saved Schools*")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
+                                Text("\(VM.choiceSavedArr.count)")
+                                        .font(.headline)
+                                        .foregroundColor(.secondary)
                             }
                         }
                         .padding()

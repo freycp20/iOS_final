@@ -13,6 +13,7 @@ struct AllSchools : Decodable{
     var graduate_schools : [School] = [School]()
     var major: [String] = [String]()
     var state: [String] = [String]()
+//    var population_range: [String] = [String]()
     
 }
 
@@ -32,7 +33,7 @@ struct School : Decodable, Identifiable, Equatable {
 struct MetaData : Decodable {
     var size : Int
     var average_sat : Int?
-    var average_gre : Double?
+    var average_gre : Int?
     var average_gpa : Double
     var avg_cost_before_financial_aid : Int?
     var avg_cost_after_financial_aid : Int?

@@ -8,6 +8,7 @@
 import Foundation
 
 class ViewModel : ObservableObject{
+
     @Published var categories : [String : [School]] = [String : [School]]()
     @Published var catChoice : String  = "undergrad_schools"
     @Published var undergrad_schools : [School] = [School]()
@@ -17,9 +18,79 @@ class ViewModel : ObservableObject{
     @Published var corner_radius = 15
     @Published var userSat : Int = 1300
     
+    var intSAT : Int? {
+        get {
+            if (SATGrade.isInt) {
+                return Int(SATGrade)!
+            } else {
+                return nil
+            }
+        }
+    }
     
-    @Published var filterBySat : Bool = true
+    var doubleGPA : Double? {
+        get {
+            if (GPAGrade.isDouble) {
+                return Double(GPAGrade)!
+            } else {
+                return nil
+            }
+        }
+    }
     
+    var intGRE : Int? {
+        get {
+            if (GREGrade.isInt) {
+                return Int(GREGrade)!
+            } else {
+                return nil
+            }
+        }
+    }
+
+    
+    @Published var darkModeToggle : Bool = false
+    @Published var SATtoggle : Bool = false
+    @Published var GPAtoggle : Bool = false
+    @Published var GREtoggle : Bool = false
+    @Published var SATGrade: String = ""
+    @Published var GPAGrade: String = ""
+    @Published var GREGrade: String = ""
+    @Published var DesiredMajor: String = ""
+    @Published var Poptoggle : Bool = false
+    @Published var DesiredPop: String = ""
+    @Published var CTtoggle : Bool = false
+    @Published var DesiredCT: String = ""
+//
+    var CTArr = ["rural", "suburban", "city"]
+    var popArr = ["None", "10000>", "7000-10000", "3000-7000", "1000-3000", "<1000"]
+    var populationCompare : [String : [String : Int]] = [
+        
+        "None": [
+            "max": 0,
+            "min": 0
+        ],
+        "10000>": [
+            "max": 1000000000,
+            "min": 10001
+        ],
+        "7000-10000": [
+            "max": 10000,
+            "min": 7001
+        ],
+        "3000-7000": [
+            "max": 7000,
+            "min": 3000
+        ],
+        "1000-3000": [
+            "max": 3000,
+            "min": 1000
+        ],
+        "<1000": [
+            "max": 999,
+            "min": 0
+        ]
+    ]
     
     var filteredSchools : [School] {
         get {
@@ -48,40 +119,66 @@ class ViewModel : ObservableObject{
         }
     }
     @Published var cat_saved_schools : [String: [School]] = [String : [School]]()
-    @Published var index : Int = 0 //    @Published var bShowName = true
-//    @Published var bShowAddress = true
+    @Published var index : Int = 0
     @Published var darkMode : Bool = false
     
-//    @Published var SATScore:  Int {
-//        willSet{
-//            
-//        }
-//        didSet{
-//            if par
-//        }
-//    }
 
-    
+    @Published var filterBySat : Bool = true
+    @Published var filterByGPA : Bool = true
+    @Published var filterByGRE : Bool = true
+    @Published var filterByPopulation : Bool = true
+    @Published var filterByComType : Bool = true
+
     
     // construction method
     // called once a new instance is created
     // set up code
     init(){
-        
-        readJSON()
+            readJSON()
     }
-    
+    // SAT, GPA, GRE, STATE, com type
     func passesTests(school: School) -> Bool {
         if (filterBySat) {
-            if (school.meta_data.average_sat ?? 0 < userSat) {
+            if (school.meta_data.average_sat ?? 0 > (intSAT ?? 1600)) {
                 return false
             }
         }
-//        if (filterByPopulation) {
-//            if (school.meta_data.size != userSize) { // FIX THIS LINE, JUST AN EXAMPLE
-//                return false
-//            }
-//        }
+        if (filterByGPA) {
+            if (school.meta_data.average_gpa > (doubleGPA ?? 5.0)) {
+                return false
+            }
+        }
+        if (filterByGRE) {
+            if (school.meta_data.average_gre ?? 0 > (intGRE ?? 400)) {
+                return false
+            }
+        }
+        
+        if (filterByPopulation) {
+            if (DesiredPop != "None" && DesiredPop != "") {
+                print(school.school_name)
+                print(DesiredPop)
+                let max = populationCompare[DesiredPop]!["max"]!
+                let min = populationCompare[DesiredPop]!["min"]!
+                print("max: \(max)")
+                print("min: \(min)")
+                print("size = \(school.meta_data.size)\n")
+                // if pop < max and > min
+//                if ((DesiredPop > max) && (DesiredPop < min)){
+                if ((school.meta_data.size > max) || (school.meta_data.size < min)){
+
+                    return false
+                }
+            }
+        }
+        
+        if (filterByComType) {
+            if (DesiredCT != "") {
+                if (DesiredCT != school.meta_data.type_of_community) {
+                    return false
+                }
+            }
+        }
         return true
     }
     func readJSON() {
@@ -120,6 +217,7 @@ class ViewModel : ObservableObject{
                 cat_saved_schools["grad_schools"] = [School]()
                 majors = json_data.major
                 states = json_data.state
+//                population_range = json_data.population_range
                 
             } catch {
                 print(error)
@@ -127,5 +225,14 @@ class ViewModel : ObservableObject{
             
             
         }
+    }
+}
+extension String {
+    var isInt: Bool {
+        return Int(self) != nil
+    }
+    
+    var isDouble: Bool {
+        return Double(self) != nil
     }
 }

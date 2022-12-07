@@ -55,9 +55,12 @@ struct SATFilterView: View{
     }
 }
 
+
+
 struct GPAFilterView: View{
     @Binding var GPAtoggle : Bool
     @Binding var GPAGrade: String
+//    @EnvironmentObject var VM : ViewModel
     var body: some View{
         VStack{
             Toggle(isOn: $GPAtoggle) {
@@ -65,6 +68,22 @@ struct GPAFilterView: View{
             }
             if GPAtoggle {
                 TextField(text: $GPAGrade, prompt: Text("Enter GPA score")) {
+                }.font(.caption)
+            }
+        }
+    }
+}
+
+struct GREFilterView: View{
+    @Binding var GREtoggle : Bool
+    @Binding var GREGrade: String
+    var body: some View{
+        VStack{
+            Toggle(isOn: $GREtoggle) {
+                Text("Filter by GRE")
+            }
+            if GREtoggle {
+                TextField(text: $GREGrade, prompt: Text("Enter GRE score")) {
                 }.font(.caption)
             }
         }
@@ -89,42 +108,43 @@ struct MajorView: View{
 
 struct PopFilterView: View{
     @Binding var Poptoggle: Bool
+    @Binding var DesiredPop: String
+    @EnvironmentObject var VM: ViewModel
     var body: some View{
-        let populationRangeList = ["None", "10000>", "3000 - 7000", "1000 - 3000", "<1000"]
+        let populationRangeList = VM.popArr
         VStack{
             Toggle(isOn: $Poptoggle) {
                 Text("Filter by Population")
             }
             if Poptoggle {
                 HStack{
-                    Text("Population Range")
-                    Spacer()
-                    Picker("Population Range", selection: $Poptoggle){
+                    Picker("Population Range", selection: $DesiredPop) {
                         ForEach(populationRangeList, id:\.self){ id in
                             Text(id)
-
                         }
-                    }.pickerStyle(MenuPickerStyle())
+                    }
                 }
             }
         }
     }
 }
 
-struct StateFilterView: View{
-    @Binding var Statetoggle: Bool
-    @Binding var DesiredState: String
+//                    }.pickerStyle(MenuPickerStyle())
+
+struct CommunityTypesFilterView: View{
+    @Binding var CTtoggle: Bool
+    @Binding var DesiredCT: String
     @EnvironmentObject var VM: ViewModel
     var body: some View{
-        let StateList = VM.states
+        let CTlist = VM.CTArr
         VStack{
-            Toggle(isOn: $Statetoggle) {
-                Text("Filter by States")
+            Toggle(isOn: $CTtoggle) {
+                Text("Filter by Community Types")
             }
-            if Statetoggle {
+            if CTtoggle {
                 HStack{
-                    Picker("Desired State", selection: $DesiredState) {
-                        ForEach(StateList, id:\.self){ id in
+                    Picker("Community", selection: $DesiredCT) {
+                        ForEach(CTlist, id:\.self){ id in
                             Text(id)
                         }
                     }
@@ -134,15 +154,7 @@ struct StateFilterView: View{
     }
 }
 struct SettingsView: View {
-    @State var darkModeToggle : Bool = false
-    @State var SATtoggle : Bool = false
-    @State var GPAtoggle : Bool = false
-    @State var SATGrade: String = ""
-    @State var GPAGrade: String = ""
-    @State var DesiredMajor: String = "Undeclared"
-    @State var Poptoggle : Bool = false
-    @State var Statetoggle : Bool = false
-    @State var DesiredState: String = "None"
+    @EnvironmentObject var VM : ViewModel
     
     var body: some View {
 //        NavigationView{
@@ -166,29 +178,33 @@ struct SettingsView: View {
                                     Text("Dark Mode")
                                     Spacer()
                                 }
-                                DarkModeView(toggle: $darkModeToggle)
+                                DarkModeView(toggle: $VM.darkModeToggle)
+//                                DarkModeView(toggle: $darkModeToggle)
                             }
                         }
                         
-                        // GPA and SAT filter
-                        Section(header: Text("Grade filter"), footer: Text("Allows user to filter schools through grades")){
-                            VStack{
-                                SATFilterView(SATtoggle: $SATtoggle, SATGrade: $SATGrade)
-                                GPAFilterView(GPAtoggle: $GPAtoggle, GPAGrade: $GPAGrade)
-                            }
-                        }
                         
                         // major information
                         Section(header: Text("Major preference")){
                             HStack{
-                                MajorView(DesiredMajor: $DesiredMajor)
+                                MajorView(DesiredMajor: $VM.DesiredMajor)
+                            }
+                        }
+                        
+                        // GPA and SAT and GRE filter
+                        Section(header: Text("Grade filter"), footer: Text("Allows user to filter schools through grades")){
+                            VStack{
+                                SATFilterView(SATtoggle: $VM.SATtoggle, SATGrade: $VM.SATGrade)
+                                GPAFilterView(GPAtoggle: $VM.GPAtoggle, GPAGrade: $VM.GPAGrade)
+                                GREFilterView(GREtoggle: $VM.GREtoggle, GREGrade: $VM.GREGrade)
+
                             }
                         }
                         
                         // population and state filter
-                        Section(footer: Text("Filter out population range and state of college")){
-                            PopFilterView(Poptoggle: $Poptoggle)
-                            StateFilterView(Statetoggle: $Statetoggle, DesiredState: $DesiredState)
+                        Section(footer: Text("Filter out population range and community type of college")){
+                            PopFilterView(Poptoggle: $VM.Poptoggle, DesiredPop: $VM.DesiredPop)
+                            CommunityTypesFilterView(CTtoggle: $VM.CTtoggle, DesiredCT: $VM.DesiredCT)
                         }
                     }
                 }.listStyle(.insetGrouped)
