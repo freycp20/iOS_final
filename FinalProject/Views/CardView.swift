@@ -28,6 +28,48 @@ struct CardView: View {
 //    @Binding var changing : Bool
     var profile : Bool = false
     
+    func create_view(title: Text, content: Text) -> some View {
+        return VStack(alignment: .leading, spacing: 0) {
+            title
+                .font(.title2)
+                .bold()
+                .padding(.bottom, 5)
+                .multilineTextAlignment(.leading)
+            
+            content
+                .font(.headline)
+                .foregroundColor(.secondary)
+            
+        }.frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            alignment: .topLeading
+        )
+        .padding(15)
+    }
+    var preferences : [String : AnyView] {
+        get {
+            let gpa = Text("\(currentSchool.meta_data.average_gpa, specifier: "%.2f")")
+            return [
+                "sat": AnyView(create_view(title: Text("Average SAT"), content: Text("\(currentSchool.meta_data.average_sat ?? 0)"))),
+                "gpa": AnyView(create_view(title: Text("Average GPA"), content: gpa)),
+                "population": AnyView(create_view(title: Text("Population"), content: Text("\(currentSchool.meta_data.size)"))),
+                "gre": AnyView(create_view(title: Text("Average GRE"), content: Text("\(currentSchool.meta_data.average_gre ?? 0)"))),
+                "community" : AnyView(create_view(title: Text("Community Type"), content: Text(currentSchool.meta_data.type_of_community)))
+            ]
+        }
+    }
+    var firstChoice : AnyView {
+        get {
+            return AnyView(preferences[VM.firstChoice])
+        }
+    }
+    var secondChoice : AnyView {
+        get {
+            return AnyView(preferences[VM.secondChoice])
+        }
+    }
+    
     @ViewBuilder
     var bottomContent : some View {
         if (profile) {
@@ -72,40 +114,9 @@ struct CardView: View {
     }
     var metrics : some View {
         HStack(spacing:0) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Average GPA")
-                    .font(.title2)
-                    .bold()
-                    .padding(.bottom, 5)
-                    .multilineTextAlignment(.leading)
-                Text("\(currentSchool.meta_data.average_gpa, specifier: "%.2f") ")
-                    .font(.headline)
-                    .foregroundColor(.secondary)
-                
-            }.frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                alignment: .topLeading
-            )
-            .padding(15)
+            firstChoice
             Divider().padding([.top, .bottom], 5)
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Average SAT")
-                    .font(.title2)
-                    .bold()
-                    .padding(.bottom, 5)
-                    .multilineTextAlignment(.leading)
-                
-                Text("\(currentSchool.meta_data.average_sat ?? 0)")
-                    .font(.headline)
-                    .foregroundColor(.secondary)
-                
-            }.frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                alignment: .topLeading
-            )
-            .padding(15)
+            secondChoice
         }.background(.white)
             .fixedSize(horizontal: false, vertical: true)
     }

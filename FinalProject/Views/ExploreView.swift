@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
     @EnvironmentObject var VM : ViewModel
     @State private var isSideBarOpened = false
     @State private var cardChange = true

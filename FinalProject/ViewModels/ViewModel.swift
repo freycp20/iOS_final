@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class ViewModel : ObservableObject{
 
     @Published var categories : [String : [School]] = [String : [School]]()
@@ -48,6 +49,8 @@ class ViewModel : ObservableObject{
         }
     }
 
+    @Published var firstChoice : String = "gpa"
+    @Published var secondChoice : String = "sat"
     
     @Published var darkModeToggle : Bool = false
     @Published var SATtoggle : Bool = false
