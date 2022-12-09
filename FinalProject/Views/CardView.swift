@@ -51,11 +51,10 @@ struct CardView: View {
         get {
             let gpa = Text("\(currentSchool.meta_data.average_gpa, specifier: "%.2f")")
             return [
-                "sat": AnyView(create_view(title: Text("Average SAT"), content: Text("\(currentSchool.meta_data.average_sat ?? 0)"))),
-                "gpa": AnyView(create_view(title: Text("Average GPA"), content: gpa)),
-                "population": AnyView(create_view(title: Text("Population"), content: Text("\(currentSchool.meta_data.size)"))),
-                "gre": AnyView(create_view(title: Text("Average GRE"), content: Text("\(currentSchool.meta_data.average_gre ?? 0)"))),
-                "community" : AnyView(create_view(title: Text("Community Type"), content: Text(currentSchool.meta_data.type_of_community)))
+                "Test Scores": AnyView(create_view(title: Text("Average \(VM.catChoice == "undergrad_schools" ? "SAT" : "GRE")"), content: Text("\(VM.catChoice == "undergrad_schools" ? currentSchool.meta_data.average_sat ?? 0 : currentSchool.meta_data.average_gre ?? 0)"))),
+                "GPA": AnyView(create_view(title: Text("Average GPA"), content: gpa)),
+                "Population": AnyView(create_view(title: Text("Population"), content: Text("\(currentSchool.meta_data.size)"))),
+                "Community" : AnyView(create_view(title: Text("Community Type"), content: Text(currentSchool.meta_data.type_of_community)))
             ]
         }
     }

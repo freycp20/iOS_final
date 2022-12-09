@@ -2,7 +2,7 @@
 //  ProfileView.swift
 //  FinalProject
 //
-//  Created by Caleb Frey on 11/7/22.
+//  Created by Immanuel Chia on 11/7/22.
 //
 
 import SwiftUI
@@ -98,11 +98,9 @@ struct ProfileView: View {
                                     .font(.title2)
                                     .bold()
                                 
-                                let score = VM.doubleGPA
-                                let doubleStr = String(format: "%.2f", score ?? 0)
                                 
                                 if let doubleStr = VM.doubleGPA {
-                                    Text("\(doubleStr)")
+                                    Text("\(doubleStr, specifier: "%.2f")")
                                         .font(.headline)
                                         .foregroundColor(.secondary)
                                 } else {

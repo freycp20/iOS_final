@@ -1,310 +1,983 @@
 {
-    "undergraduate_schools": [{
-        "school_name": "Grove City College",
-        "meta_data": {
-            "size": 2306,
-            "average_sat": 1250,
-            "average_gpa": 3.67,
-            "avg_cost_before_financial_aid": 31840,
-            "avg_cost_after_financial_aid": 18316,
-            "location": {
-                "latitude": 41.155609,
-                "longitude": -80.082100
-            },
-            "student_to_faculty_ratio": "13:1",
-            "state": "Pennsylvania",
-            "type_of_community": "suburban"
-        },
-        "url": "https://www.gcc.edu",
-        "image": "grove_city_college"
-    },
-    
+  "undergraduate_schools": [
     {
-        "school_name": "Slippery Rock University",
-        "meta_data": {
-          "size": 7332,
-            "average_sat": 1070,
-            "average_gpa": 3.25,
-            "avg_cost_before_financial_aid": 31840,
-            "avg_cost_after_financial_aid": 21200,
-            "location": {
-                "latitude": 41.0620,
-                "longitude": -80.043
-            },
-            "student_to_faculty_ratio": "24:1",
-            "state": "Pennsylvania",
-            "type_of_community": "suburban"
+      "school_name": "Grove City College",
+      "meta_data": {
+        "size": 2306,
+        "average_sat": 1250,
+        "average_gpa": 3.67,
+        "avg_cost_before_financial_aid": 31840,
+        "avg_cost_after_financial_aid": 18316,
+        "location": {
+          "latitude": 41.155609,
+          "longitude": -80.0821
         },
-        "url": "https://www.sru.edu",
-        "image": "slippery_rock_university"
-    }, {
-        "school_name": "Messiah University",
-        "meta_data": {
-          "size": 2473,
-            "average_sat": 1195,
-            "average_gpa": 3.25,
-            "avg_cost_before_financial_aid": 26864,
-            "avg_cost_after_financial_aid": 29300,
-            "location": {
-                "latitude": 40.1553,
-                "longitude": -76.9933
-            },
-            "student_to_faculty_ratio": "12:1",
-            "state": "Pennsylvania",
-            "type_of_community": "suburban"
-        },
-        "url": "https://www.messiah.edu",
-        "image": "messiah_university"
+        "student_to_faculty_ratio": "13:1",
+        "state": "Pennsylvania",
+        "type_of_community": "suburban",
+        "address": "100 Campus Dr, Grove City, PA 16127"
+      },
+      "url": "https://www.gcc.edu",
+      "image": "grove_city_college"
     },
     {
-            "school_name": "Wheaton College",
-            "meta_data": {
-              "size": 2228,
-                "average_sat": 1330,
-                "average_gpa": 3.44,
-                "avg_cost_before_financial_aid": 41990,
-                "avg_cost_after_financial_aid": 23746,
-                "location": {
-                    "latitude": 41.860985,
-                    "longitude": -88.124168
-                },
-                "student_to_faculty_ratio": "10:1",
-                "state": "Illinois",
-                "type_of_community": "suburban"
-            },
-            "url": "https://www.wheaton.edu",
-            "image": "wheaton_college"
+      "school_name": "Slippery Rock University",
+      "meta_data": {
+        "size": 7332,
+        "average_sat": 1070,
+        "average_gpa": 3.25,
+        "avg_cost_before_financial_aid": 31840,
+        "avg_cost_after_financial_aid": 21200,
+        "location": {
+          "latitude": 41.062,
+          "longitude": -80.043
         },
-    {
-            "school_name": "California Institute of Technology",
-            "meta_data": {
-              "size": 901,
-                "average_sat": 1555,
-                "average_gpa": 4.0,
-                "avg_cost_before_financial_aid": 58479,
-                "avg_cost_after_financial_aid": 26542,
-                "location": {
-                    "latitude": 34.138000,
-                    "longitude": -118.125000
-                },
-                "student_to_faculty_ratio": "3:1",
-                "state": "California",
-                "type_of_community": "suburban"
-            },
-            "url": "https://www.caltech.edu",
-            "image": "california_institute_of_technology"
-        }, {
-        "school_name": "Taylor University",
-        "meta_data": {
-          "size": 1755,
-            "average_sat": 1210,
-            "average_gpa": 3.85,
-            "avg_cost_before_financial_aid": 48640,
-            "avg_cost_after_financial_aid": 24628,
-            "location": {
-                "latitude": 40.4548,
-                "longitude": -85.4917
-            },
-            "student_to_faculty_ratio": "12:1",
-            "state": "Indiana",
-            "type_of_community": "rural"
-        },
-        "url": "https://www.taylor.edu",
-        "image": "taylor_university"
+        "student_to_faculty_ratio": "24:1",
+        "state": "Pennsylvania",
+        "type_of_community": "suburban",
+        "address": "1 Morrow Way, Slippery Rock, PA 16057"
+      },
+      "url": "https://www.sru.edu",
+      "image": "slippery_rock_university"
     },
     {
-        "school_name": "University of Cincinnati",
-        "meta_data": {
-          "size": 27425,
-            "average_sat": 1225,
-            "average_gpa": 3.70,
-            "avg_cost_before_financial_aid": 25253,
-            "avg_cost_after_financial_aid": 22415,
-            "location": {
-                "latitude": 39.132922,
-                "longitude": -84.51495
-            },
-            "student_to_faculty_ratio": "19:1",
-            "state": "Ohio",
-            "type_of_community": "city"
+      "school_name": "Messiah University",
+      "meta_data": {
+        "size": 2473,
+        "average_sat": 1195,
+        "average_gpa": 3.25,
+        "avg_cost_before_financial_aid": 29300,
+        "avg_cost_after_financial_aid": 26864,
+        "location": {
+          "latitude": 40.1553,
+          "longitude": -76.9933
         },
-        "url": "https://www.uc.edu",
-        "image": "university_of_cincinnati"
+        "student_to_faculty_ratio": "12:1",
+        "state": "Pennsylvania",
+        "type_of_community": "suburban",
+        "address": "One College Ave., Mechanicsburg, PA 17055"
+      },
+      "url": "https://www.messiah.edu",
+      "image": "messiah_university"
     },
     {
-        "school_name": "Hillsdale College",
-        "meta_data": {
-          "size": 1445,
-            "average_sat": 1375,
-            "average_gpa": 3.89,
-            "avg_cost_before_financial_aid": 45382,
-            "avg_cost_after_financial_aid": 32912,
-            "location": {
-                "latitude": 38.683385,
-                "longitude": -90.284003
-            },
-            "student_to_faculty_ratio": "8:1",
-            "state": "Michigan",
-            "type_of_community": "rural"
+      "school_name": "Wheaton College",
+      "meta_data": {
+        "size": 2228,
+        "average_sat": 1330,
+        "average_gpa": 3.44,
+        "avg_cost_before_financial_aid": 41990,
+        "avg_cost_after_financial_aid": 23746,
+        "location": {
+          "latitude": 41.860985,
+          "longitude": -88.124168
         },
+        "student_to_faculty_ratio": "10:1",
+        "state": "Illinois",
+        "type_of_community": "suburban",
+        "address": "501 College Ave, Wheaton, IL 60187"
+      },
+      "url": "https://www.wheaton.edu",
+      "image": "wheaton_college"
+    },
+    {
+      "school_name": "California Institute of Technology",
+      "meta_data": {
+        "size": 901,
+        "average_sat": 1555,
+        "average_gpa": 4,
+        "avg_cost_before_financial_aid": 58479,
+        "avg_cost_after_financial_aid": 26542,
+        "location": {
+          "latitude": 34.138,
+          "longitude": -118.125
+        },
+        "student_to_faculty_ratio": "3:1",
+        "state": "California",
+        "type_of_community": "suburban",
+        "address": "1200 E California Blvd, Pasadena, CA 91125"
+      },
+      "url": "https://www.caltech.edu",
+      "image": "california_institute_of_technology"
+    },
+    {
+      "school_name": "Taylor University",
+      "meta_data": {
+        "size": 1755,
+        "average_sat": 1210,
+        "average_gpa": 3.85,
+        "avg_cost_before_financial_aid": 48640,
+        "avg_cost_after_financial_aid": 24628,
+        "location": {
+          "latitude": 40.4548,
+          "longitude": -85.4917
+        },
+        "student_to_faculty_ratio": "12:1",
+        "state": "Indiana",
+        "type_of_community": "rural",
+        "address": "1846 S Main St, Upland, IN 46989"
+      },
+      "url": "https://www.taylor.edu",
+      "image": "taylor_university"
+    },
+    {
+      "school_name": "University of Cincinnati",
+      "meta_data": {
+        "size": 27425,
+        "average_sat": 1225,
+        "average_gpa": 3.7,
+        "avg_cost_before_financial_aid": 25253,
+        "avg_cost_after_financial_aid": 22415,
+        "location": {
+          "latitude": 39.132922,
+          "longitude": -84.51495
+        },
+        "student_to_faculty_ratio": "19:1",
+        "state": "Ohio",
+        "type_of_community": "city",
+        "address": "2600 Clifton Ave, Cincinnati, OH 45221"
+      },
+      "url": "https://www.uc.edu",
+      "image": "university_of_cincinnati"
+    },
+    {
+      "school_name": "Hillsdale College",
+      "meta_data": {
+        "size": 1445,
+        "average_sat": 1375,
+        "average_gpa": 3.89,
+        "avg_cost_before_financial_aid": 45382,
+        "avg_cost_after_financial_aid": 32912,
+        "location": {
+          "latitude": 38.683385,
+          "longitude": -90.284003
+        },
+        "student_to_faculty_ratio": "8:1",
+        "state": "Michigan",
+        "type_of_community": "rural",
+        "address": "33 E College St, Hillsdale, MI 49242"
+      },
       "url": "https://www.hillsdale.edu",
-        "image": "hillsdale_college"
+      "image": "hillsdale_college"
     },
     {
-        "school_name": "Cedarville University",
-        "meta_data": {
-          "size": 3566,
-            "average_sat": 1230,
-            "average_gpa": 3.84,
-            "avg_cost_before_financial_aid": 43098,
-            "avg_cost_after_financial_aid": 24965,
-            "location": {
-                "latitude": 39.750666,
-                "longitude": -83.810532
-            },
-            "student_to_faculty_ratio": "16:1",
-            "state": "Ohio",
-            "type_of_community": "rural"
+      "school_name": "Cedarville University",
+      "meta_data": {
+        "size": 3566,
+        "average_sat": 1230,
+        "average_gpa": 3.84,
+        "avg_cost_before_financial_aid": 43098,
+        "avg_cost_after_financial_aid": 24965,
+        "location": {
+          "latitude": 39.750666,
+          "longitude": -83.810532
         },
+        "student_to_faculty_ratio": "16:1",
+        "state": "Ohio",
+        "type_of_community": "rural",
+        "address": "251 N Main St, Cedarville, OH 45314"
+      },
       "url": "https://www.cedarville.edu",
-        "image": "cedarville_university"
-    }, {
-        "school_name": "Harvard University",
-        "meta_data": {
-          "size": 6099,
-            "average_sat": 1520,
-            "average_gpa": 4.18,
-            "avg_cost_before_financial_aid": 72357,
-            "avg_cost_after_financial_aid": 13872,
-            "location": {
-                "latitude": 42.378036,
-                "longitude": -71.118340
-            },
-            "student_to_faculty_ratio": "7:1",
-            "state": "Massachusetts",
-            "type_of_community": "city"
+      "image": "cedarville_university"
+    },
+    {
+      "school_name": "Harvard University",
+      "meta_data": {
+        "size": 6099,
+        "average_sat": 1520,
+        "average_gpa": 4.18,
+        "avg_cost_before_financial_aid": 72357,
+        "avg_cost_after_financial_aid": 13872,
+        "location": {
+          "latitude": 42.378036,
+          "longitude": -71.11834
         },
+        "student_to_faculty_ratio": "7:1",
+        "state": "Massachusetts",
+        "type_of_community": "city",
+        "address": "86 Brattle Street Cambridge, MA 02138"
+      },
       "url": "https://www.harvard.edu",
-        "image": "harvard_university"
+      "image": "harvard_university"
     },
     {
-        "school_name": "Princeton University",
-        "meta_data": {
-          "size": 4688,
-            "average_sat": 1510,
-            "average_gpa": 3.9,
-            "avg_cost_before_financial_aid": 56010,
-            "avg_cost_after_financial_aid": 11990,
-            "location": {
-                "latitude": 40.343899,
-                "longitude": -74.660049
-            },
-            "student_to_faculty_ratio": "5:1",
-            "state": "New Jersey",
-            "type_of_community": "suburban"
+      "school_name": "Princeton University",
+      "meta_data": {
+        "size": 4688,
+        "average_sat": 1510,
+        "average_gpa": 3.9,
+        "avg_cost_before_financial_aid": 56010,
+        "avg_cost_after_financial_aid": 11990,
+        "location": {
+          "latitude": 40.343899,
+          "longitude": -74.660049
         },
+        "student_to_faculty_ratio": "5:1",
+        "state": "New Jersey",
+        "type_of_community": "suburban",
+        "address": "Princeton University PO Box 430 Princeton, NJ 08544"
+      },
       "url": "https://www.princeton.edu",
-        "image": "princeton_university"
+      "image": "princeton_university"
     },
     {
-        "school_name": "Stanford University",
-        "meta_data": {
-          "size": 6366,
-            "average_sat": 1495,
-            "average_gpa": 3.96,
-            "avg_cost_before_financial_aid": 57693,
-            "avg_cost_after_financial_aid": 12894,
-            "location": {
-                "latitude": 37.428230,
-                "longitude": -122.168861
-            },
-            "student_to_faculty_ratio": "5:1",
-            "state": "California",
-            "type_of_community": "suburban"
+      "school_name": "Stanford University",
+      "meta_data": {
+        "size": 6366,
+        "average_sat": 1495,
+        "average_gpa": 3.96,
+        "avg_cost_before_financial_aid": 57693,
+        "avg_cost_after_financial_aid": 12894,
+        "location": {
+          "latitude": 37.42823,
+          "longitude": -122.168861
         },
+        "student_to_faculty_ratio": "5:1",
+        "state": "California",
+        "type_of_community": "suburban",
+        "address": "450 Serra Mall, Stanford, CA 94305"
+      },
       "url": "https://www.stanford.edu",
-        "image": "stanford_university"
+      "image": "stanford_university"
     },
     {
-        "school_name": "Massachusetts Institute of Technology",
-        "meta_data": {
-          "size": 4360,
-            "average_sat": 1515,
-            "average_gpa": 4.17,
-            "avg_cost_before_financial_aid": 57590,
-            "avg_cost_after_financial_aid": 19599,
-            "location": {
-                "latitude": 42.360001,
-                "longitude": -71.092003
-            },
-            "student_to_faculty_ratio": "3:1",
-            "state": "Massachusetts",
-            "type_of_community": "city"
+      "school_name": "Massachusetts Institute of Technology",
+      "meta_data": {
+        "size": 4360,
+        "average_sat": 1515,
+        "average_gpa": 4.17,
+        "avg_cost_before_financial_aid": 57590,
+        "avg_cost_after_financial_aid": 19599,
+        "location": {
+          "latitude": 42.360001,
+          "longitude": -71.092003
         },
+        "student_to_faculty_ratio": "3:1",
+        "state": "Massachusetts",
+        "type_of_community": "city",
+        "address": "77 Massachusetts Ave, Cambridge, MA 02139"
+      },
       "url": "https://www.mit.edu",
-        "image": "massachusetts_institute_of_technology"
+      "image": "massachusetts_institute_of_technology"
     },
     {
-        "school_name": "Regent University",
-        "meta_data": {
-          "size": 4231,
-            "average_sat": 980,
-            "average_gpa": 3.51,
-            "avg_cost_before_financial_aid": null,
-            "avg_cost_after_financial_aid": 24888,
-            "location": {
-                "latitude": 36.80064,
-                "longitude": -76.19455
-            },
-            "student_to_faculty_ratio": "21:1",
-            "state": "Virginia",
-            "type_of_community": "suburban"
+      "school_name": "Regent University",
+      "meta_data": {
+        "size": 4231,
+        "average_sat": 980,
+        "average_gpa": 3.51,
+        "avg_cost_before_financial_aid": null,
+        "avg_cost_after_financial_aid": 24888,
+        "location": {
+          "latitude": 36.80064,
+          "longitude": -76.19455
         },
+        "student_to_faculty_ratio": "21:1",
+        "state": "Virginia",
+        "type_of_community": "suburban",
+        "address": "1000 Regent University Dr, Virginia Beach, VA 23464"
+      },
       "url": "https://explore.regent.edu",
-        "image": "regent_university"
-    }, {
-        "school_name": "University of California, Los Angeles",
-        "meta_data": {
-          "size": 31636,
-            "average_sat": 1455,
-            "average_gpa": 3.90,
-            "avg_cost_before_financial_aid": 68474,
-            "avg_cost_after_financial_aid": 15023,
-            "location": {
-                "latitude": 34.0700,
-                "longitude": -118.4398
-            },
-            "student_to_faculty_ratio": "18:1",
-            "state": "California",
-            "type_of_community": "city"
+      "image": "regent_university"
+    },
+    {
+      "school_name": "University of California, Los Angeles",
+      "meta_data": {
+        "size": 31636,
+        "average_sat": 1455,
+        "average_gpa": 3.9,
+        "avg_cost_before_financial_aid": 68474,
+        "avg_cost_after_financial_aid": 15023,
+        "location": {
+          "latitude": 34.07,
+          "longitude": -118.4398
         },
+        "student_to_faculty_ratio": "18:1",
+        "state": "California",
+        "type_of_community": "city",
+        "address": "405 Hilgard Avenue Los Angeles, CA 90095"
+      },
       "url": "https://www.ucla.edu",
-        "image": "university_of_California_Los_Angeles"
-    }],
-    
-    "graduate_schools": [
-        {
-            "school_name": "Messiah University",
-            "meta_data": {
-              "size": 2473,
-                "average_gre": 1195,
-                "average_gpa": 3.25,
-                "avg_cost_before_financial_aid": 26864,
-                "avg_cost_after_financial_aid": 29300,
-                "location": {
-                    "latitude": 40.1553,
-                    "longitude": -76.9933
-                },
-                "student_to_faculty_ratio": "12:1",
-                "state": "Pennsylvania",
-                "type_of_community": "suburban"
-            },
-            "url": "https://www.messiah.edu",
-            "image": "messiah_university"
-        }
-    ],
-
-    "major": ["Undeclared", "Accounting", "Actuarial Science", "Advertising Major", "Aerospace Engineering", "African Languages", "Literatures and Linguistics", "African Studies", "African-American Studies", "Agricultural Business and Management", "Agricultural Economics", "Agricultural Education", "Agricultural Journalism", "Agricultural Mechanization Major", "Agricultural Technology Management", "Agricultural/Biological Engineering and Bioengineering", "Agriculture", "Agronomy and Crop Science", "Air Traffic Control", "American History", "American Literature", "American Sign Language", "American Studies", "Anatomy", "Ancient Studies", "Animal Behavior and Ethology", "Animal Science", "Animation and Special Effects", "Anthropology", "Applied Mathematics", "Aquaculture", "Aquatic Biology", "Arabic", "Archeology", "Architectural Engineering", "Architectural History", "Architecture", "Art", "Art Education", "Art History", "Art Therapy", "Artificial Intelligence and Robotics", "Asian-American Studies", "Astronomy", "Astrophysics", "Athletic Training", "Atmospheric Science", "Automotive Engineering", "Aviation", "Bakery Science", "Biblical Studies", "Biochemistry", "Bioethics", "Biology", "Biomedical Engineering", "Biomedical Science", "Biopsychology", "Biotechnology", "Botany/Plant Biology", "Business Administration/Management", "Business Communications", "Business Education", "Canadian Studies", "Caribbean Studies", "Cell Biology Major", "Ceramic Engineering", "Ceramics", "Chemical Engineering Major", "Chemical Physics", "Chemistry Major", "Child Care", "Child Development", "Chinese", "Chiropractic", "Church Music", "Cinematography and Film/Video Production", "Circulation Technology", "Civil Engineering", "Classics", "Clinical Psychology", "Cognitive Psychology", "Communication Disorders", "Communications Studies/Speech Communication and Rhetoric", "Comparative Literature", "Computer and Information Science", "Computer Engineering", "Computer Graphics", "Computer Systems Analysis Major", "Construction Management", "Counseling", "Crafts", "Creative Writing", "Criminal Science", "Criminology", "Culinary Arts", "Dance", "Data Processing", "Dental Hygiene", "Developmental Psychology", "Diagnostic Medical Sonography", "Dietetics", "Digital Communications and Media/Multimedia", "Drawing", "Early Childhood Education", "East Asian Studies", "East European Studies", "Ecology", "Economics Major", "Education", "Education Administration", "Education of the Deaf", "Educational Psychology", "Electrical Engineering", "Elementary Education", "Engineering Mechanics", "Engineering Physics", "English", "English Composition", "English Literature Major", "Entomology", "Entrepreneurship Major", "Environmental Design/Architecture", "Environmental Science", "Environmental/Environmental Health Engineering", "Epidemiology", "Equine Studies", "Ethnic Studies", "European History", "Experimental Pathology", "Experimental Psychology", "Fashion Design", "Fashion Merchandising", "Feed Science", "Fiber", "Textiles and Weaving Arts", "Film", "Finance", "Floriculture", "Food Science", "Forensic Science", "Forestry", "French", "Furniture Design", "Game Design", "Gay and Lesbian Studies", "Genetics", "Geography", "Geological Engineering", "Geology", "Geophysics", "German", "Gerontology", "Government Major", "Graphic Design", "Health Administration", "Hebrew", "Hispanic-American", "Puerto Rican and Chicano Studies", "Historic Preservation", "History", "Home Economics", "Horticulture", "Hospitality", "Human Development", "Human Resources Management Major", "Illustration", "Industrial Design", "Industrial Engineering", "Industrial Management", "Industrial Psychology", "Information Technology", "Interior Architecture", "Interior Design", "International Agriculture", "International Business", "International Relations", "International Studies", "Islamic Studies", "Italian", "Japanese", "Jazz Studies", "Jewelry and Metalsmithing", "Jewish Studies", "Journalism", "Kinesiology", "Korean", "Land Use Planning and Management", "Landscape Architecture", "Landscape Horticulture", "Latin American Studies", "Library Science", "Linguistics", "Logistics Management", "Management Information Systems", "Managerial Economics", "Marine Biology Major", "Marine Science", "Marketing Major", "Mass Communication", "Massage Therapy", "Materials Science", "Mathematics", "Mechanical Engineering", "Medical Technology", "Medieval and Renaissance Studies", "Mental Health Services", "Merchandising and Buying Operations", "Metallurgical Engineering", "Microbiology", "Middle Eastern Studies", "Military Science", "Mineral Engineering", "Missions", "Modern Greek", "Molecular Biology", "Molecular Genetics", "Mortuary Science", "Museum Studies", "Music", "Music Education", "Music History Major", "Music Management", "Music Therapy", "Musical Theater", "Native American Studies", "Natural Resources Conservation", "Naval Architecture", "Neurobiology", "Neuroscience", "Nuclear Engineering", "Nursing Major", "Nutrition", "Occupational Therapy", "Ocean Engineering", "Oceanography", "Operations Management", "Organizational Behavior Studies", "Painting", "Paleontology", "Pastoral Studies", "Peace Studies", "Petroleum Engineering", "Pharmacology", "Pharmacy", "Philosophy", "Photography", "Photojournalism Major", "Physical Education", "Physical Therapy", "Physician Assistant", "Physics", "Physiological Psychology", "Piano", "Planetary Science", "Plant Pathology", "Playwriting and Screenwriting", "Political Communication", "Political Science Major", "Portuguese", "Pre-Dentistry", "Pre-Law", "Pre-Medicine", "Pre-Optometry", "Pre-Seminary", "Pre-Veterinary Medicine", "Printmaking", "Psychology", "Public Administration", "Public Health", "Public Policy Analysis", "Public Relations Major", "Radio and Television", "Radiologic Technology", "Range Science and Management", "Real Estate", "Recording Arts Technology", "Recreation Management", "Rehabilitation Services", "Religious Studies", "Respiratory Therapy", "Risk Management", "Rural Sociology", "Russian", "Scandinavian Studies", "Sculpture", "Slavic Languages and Literatures", "Social Psychology", "Social Work", "Sociology", "Soil Science", "Sound Engineering", "South Asian Studies", "Southeast Asia Studies", "Spanish Major", "Special Education", "Speech Pathology", "Sport and Leisure Studies", "Sports Management", "Statistics Major", "Surveying", "Sustainable Resource Management", "Teacher Education", "Teaching English as a Second Language", "Technical Writing", "Technology Education", "Textile Engineering", "Theatre", "Theology", "Tourism", "Toxicology", "Turfgrass Science", "Urban Planning", "Urban Studies", "Visual Communication", "Voice", "Web Design", "Webmaster and Web Management", "Welding Engineering", "Wildlife Management", "Women's Studies", "Youth Ministries", "Zoology"],
-    
-    "state": ["None", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+      "image": "university_of_California_Los_Angeles"
+    }
+  ],
+  "graduate_schools": [
+    {
+      "school_name": "Johns Hopkins University",
+      "meta_data": {
+        "size": 20088,
+        "average_gre": null,
+        "average_gpa": 3.25,
+        "avg_cost_before_financial_aid": 78657,
+        "avg_cost_after_financial_aid": 24749,
+        "location": {
+          "latitude": 39.328888,
+          "longitude": -76.620277
+        },
+        "student_to_faculty_ratio": "7:1",
+        "state": "Maryland",
+        "type_of_community": "city",
+        "address": "3400 N. Charles St. Baltimore, MD 21218"
+      },
+      "url": "https://www.jhu.edu",
+      "image": "john-hopkins-university"
+    },
+    {
+      "school_name": "Purdue University",
+      "meta_data": {
+        "size": 10739,
+        "average_gre": 162,
+        "average_gpa": 3,
+        "avg_cost_before_financial_aid": 41724,
+        "avg_cost_after_financial_aid": 17124,
+        "location": {
+          "latitude": 40.4226457,
+          "longitude": -86.910682
+        },
+        "student_to_faculty_ratio": "14:1",
+        "state": "Indiana",
+        "type_of_community": "suburban",
+        "address": "610 Purdue Mall, West Lafayette, IN 47907"
+      },
+      "url": "https://www.purdue.edu/gradschool/",
+      "image": "purdue-university"
+    },
+    {
+      "school_name": "Meridian University",
+      "meta_data": {
+        "size": 204,
+        "average_gre": null,
+        "average_gpa": 3,
+        "avg_cost_before_financial_aid": 21632,
+        "avg_cost_after_financial_aid": 16287,
+        "location": {
+          "latitude": 37.773972,
+          "longitude": -122.431297
+        },
+        "student_to_faculty_ratio": "18:1",
+        "state": "California",
+        "type_of_community": "suburban",
+        "address": "47 Sixth Street Petaluma, California 94952"
+      },
+      "url": "https://meridianuniversity.edu/",
+      "image": "meridian-university"
+    },
+    {
+      "school_name": "Grand Canyon University",
+      "meta_data": {
+        "size": 36114,
+        "average_gre": 300,
+        "average_gpa": 2.8,
+        "avg_cost_before_financial_aid": 32100,
+        "avg_cost_after_financial_aid": 16500,
+        "location": {
+          "latitude": 33.5075,
+          "longitude": -112.1247
+        },
+        "student_to_faculty_ratio": "21:1",
+        "state": "Arizona",
+        "type_of_community": "city",
+        "address": "3300 W Camelback Rd, Phoenix, AZ 85017"
+      },
+      "url": "https://www.gcu.edu",
+      "image": "grand-canyon-university"
+    },
+    {
+      "school_name": "Yale University",
+      "meta_data": {
+        "size": 7357,
+        "average_gre": 324,
+        "average_gpa": 4,
+        "avg_cost_before_financial_aid": 84525,
+        "avg_cost_after_financial_aid": 14790,
+        "location": {
+          "latitude": 41.316307,
+          "longitude": -72.922585
+        },
+        "student_to_faculty_ratio": "6:1",
+        "state": "Connecticut",
+        "type_of_community": "city",
+        "address": "Yale University, New Haven, CT 06520"
+      },
+      "url": "https://www.yale.edu",
+      "image": "yale-university"
+    },
+    {
+      "school_name": "University of Chicago",
+      "meta_data": {
+        "size": 10370,
+        "average_gre": null,
+        "average_gpa": 4,
+        "avg_cost_before_financial_aid": 41031,
+        "avg_cost_after_financial_aid": 19895,
+        "location": {
+          "latitude": 41.789722,
+          "longitude": -87.599724
+        },
+        "student_to_faculty_ratio": "5:1",
+        "state": "Chicago",
+        "type_of_community": "city",
+        "address": "5801 S Ellis Ave, Chicago, IL 60637"
+      },
+      "url": "https://www.uchicago.edu",
+      "image": "university-of-chicago"
+    },
+    {
+      "school_name": "University of Pennsylvania",
+      "meta_data": {
+        "size": 6000,
+        "average_gre": 321,
+        "average_gpa": 3.9,
+        "avg_cost_before_financial_aid": 54652,
+        "avg_cost_after_financial_aid": 20957,
+        "location": {
+          "latitude": 39.952305,
+          "longitude": -75.193703
+        },
+        "student_to_faculty_ratio": "7:1",
+        "state": "Pennsylvania",
+        "type_of_community": "city",
+        "address": "Philadelphia, PA 19104"
+      },
+      "url": "https://www.upenn.edu",
+      "image": "university-of-pennsylvania"
+    },
+    {
+      "school_name": "Columbia University",
+      "meta_data": {
+        "size": 22861,
+        "average_gre": 323,
+        "average_gpa": 3.65,
+        "avg_cost_before_financial_aid": 65524,
+        "avg_cost_after_financial_aid": 28178,
+        "location": {
+          "latitude": 40.807384,
+          "longitude": -73.963036
+        },
+        "student_to_faculty_ratio": "6:1",
+        "state": "New York",
+        "type_of_community": "city",
+        "address": "New York, NY 10027"
+      },
+      "url": "https://www.columbia.edu",
+      "image": "columbia-university"
+    },
+    {
+      "school_name": "Georgia Institute of Technology",
+      "meta_data": {
+        "size": 23210,
+        "average_gre": 300,
+        "average_gpa": 3.45,
+        "avg_cost_before_financial_aid": 33964,
+        "avg_cost_after_financial_aid": 19222,
+        "location": {
+          "latitude": 33.7722,
+          "longitude": -84.3902
+        },
+        "student_to_faculty_ratio": "21:1",
+        "state": "Georgia",
+        "type_of_community": "city",
+        "address": "North Ave NW, Atlanta, GA 30332"
+      },
+      "url": "https://www.gatech.edu",
+      "image": "georgia-institute-of-technology"
+    },
+    {
+      "school_name": "University of Maryland",
+      "meta_data": {
+        "size": 10611,
+        "average_gre": 313,
+        "average_gpa": 3.65,
+        "avg_cost_before_financial_aid": 38636,
+        "avg_cost_after_financial_aid": 23215,
+        "location": {
+          "latitude": 38.989697,
+          "longitude": -76.937759
+        },
+        "student_to_faculty_ratio": "18:1",
+        "state": "Maryland",
+        "type_of_community": "suburban",
+        "address": "College Park, MD 20742"
+      },
+      "url": "https://www.umd.edu",
+      "image": "university-of-maryland"
+    },
+    {
+      "school_name": "Duke University",
+      "meta_data": {
+        "size": 3500,
+        "average_gre": null,
+        "average_gpa": 3.85,
+        "avg_cost_before_financial_aid": 62941,
+        "avg_cost_after_financial_aid": 18113,
+        "location": {
+          "latitude": 36.001465,
+          "longitude": -78.939133
+        },
+        "student_to_faculty_ratio": "8:1",
+        "state": "North Carolina",
+        "type_of_community": "suburban",
+        "address": "Durham, NC 27708"
+      },
+      "url": "https://duke.edu",
+      "image": "duke-university"
+    },
+    {
+      "school_name": "Brown University",
+      "meta_data": {
+        "size": 1226,
+        "average_gre": 305,
+        "average_gpa": 3.2,
+        "avg_cost_before_financial_aid": 59254,
+        "avg_cost_after_financial_aid": 23160,
+        "location": {
+          "latitude": 41.82682,
+          "longitude": -71.402931
+        },
+        "student_to_faculty_ratio": "6:1",
+        "state": "Rhode Island",
+        "type_of_community": "city",
+        "address": "Providence, RI 02912"
+      },
+      "url": "https://www.brown.edu",
+      "image": "brown-university"
+    },
+    {
+      "school_name": "Virginia Tech",
+      "meta_data": {
+        "size": 7004,
+        "average_gre": 300,
+        "average_gpa": 3,
+        "avg_cost_before_financial_aid": 47713,
+        "avg_cost_after_financial_aid": 28634,
+        "location": {
+          "latitude": 37.225,
+          "longitude": -80.425
+        },
+        "student_to_faculty_ratio": "13:1",
+        "state": "Virginia",
+        "type_of_community": "rural",
+        "address": "Blacksburg, VA 24061"
+      },
+      "url": "https://www.vt.edu",
+      "image": "virginia-tech"
+    },
+    {
+      "school_name": "University of Michigan",
+      "meta_data": {
+        "size": 15377,
+        "average_gre": 320,
+        "average_gpa": 3.56,
+        "avg_cost_before_financial_aid": 78328,
+        "avg_cost_after_financial_aid": 26542,
+        "location": {
+          "latitude": 42.278046,
+          "longitude": -83.73822
+        },
+        "student_to_faculty_ratio": "15:1",
+        "state": "Michigan",
+        "type_of_community": "city",
+        "address": "500 S State St, Ann Arbor, MI 48109"
+      },
+      "url": "https://umich.edu",
+      "image": "university-of-michigan"
+    },
+    {
+      "school_name": "Northwestern University",
+      "meta_data": {
+        "size": 8000,
+        "average_gre": 325,
+        "average_gpa": 3,
+        "avg_cost_before_financial_aid": 60276,
+        "avg_cost_after_financial_aid": 41660,
+        "location": {
+          "latitude": 42.055984,
+          "longitude": -87.675171
+        },
+        "student_to_faculty_ratio": "6:1",
+        "state": "Illinois",
+        "type_of_community": "suburban",
+        "address": "633 Clark St, Evanston, IL 60208"
+      },
+      "url": "https://umich.edu",
+      "image": "northwestern-university"
+    }
+  ],
+  "major": [
+    "Undeclared",
+    "Accounting",
+    "Actuarial Science",
+    "Advertising Major",
+    "Aerospace Engineering",
+    "African Languages",
+    "Literatures and Linguistics",
+    "African Studies",
+    "African-American Studies",
+    "Agricultural Business and Management",
+    "Agricultural Economics",
+    "Agricultural Education",
+    "Agricultural Journalism",
+    "Agricultural Mechanization Major",
+    "Agricultural Technology Management",
+    "Agricultural/Biological Engineering and Bioengineering",
+    "Agriculture",
+    "Agronomy and Crop Science",
+    "Air Traffic Control",
+    "American History",
+    "American Literature",
+    "American Sign Language",
+    "American Studies",
+    "Anatomy",
+    "Ancient Studies",
+    "Animal Behavior and Ethology",
+    "Animal Science",
+    "Animation and Special Effects",
+    "Anthropology",
+    "Applied Mathematics",
+    "Aquaculture",
+    "Aquatic Biology",
+    "Arabic",
+    "Archeology",
+    "Architectural Engineering",
+    "Architectural History",
+    "Architecture",
+    "Art",
+    "Art Education",
+    "Art History",
+    "Art Therapy",
+    "Artificial Intelligence and Robotics",
+    "Asian-American Studies",
+    "Astronomy",
+    "Astrophysics",
+    "Athletic Training",
+    "Atmospheric Science",
+    "Automotive Engineering",
+    "Aviation",
+    "Bakery Science",
+    "Biblical Studies",
+    "Biochemistry",
+    "Bioethics",
+    "Biology",
+    "Biomedical Engineering",
+    "Biomedical Science",
+    "Biopsychology",
+    "Biotechnology",
+    "Botany/Plant Biology",
+    "Business Administration/Management",
+    "Business Communications",
+    "Business Education",
+    "Canadian Studies",
+    "Caribbean Studies",
+    "Cell Biology Major",
+    "Ceramic Engineering",
+    "Ceramics",
+    "Chemical Engineering Major",
+    "Chemical Physics",
+    "Chemistry Major",
+    "Child Care",
+    "Child Development",
+    "Chinese",
+    "Chiropractic",
+    "Church Music",
+    "Cinematography and Film/Video Production",
+    "Circulation Technology",
+    "Civil Engineering",
+    "Classics",
+    "Clinical Psychology",
+    "Cognitive Psychology",
+    "Communication Disorders",
+    "Communications Studies/Speech Communication and Rhetoric",
+    "Comparative Literature",
+    "Computer and Information Science",
+    "Computer Engineering",
+    "Computer Graphics",
+    "Computer Systems Analysis Major",
+    "Construction Management",
+    "Counseling",
+    "Crafts",
+    "Creative Writing",
+    "Criminal Science",
+    "Criminology",
+    "Culinary Arts",
+    "Dance",
+    "Data Processing",
+    "Dental Hygiene",
+    "Developmental Psychology",
+    "Diagnostic Medical Sonography",
+    "Dietetics",
+    "Digital Communications and Media/Multimedia",
+    "Drawing",
+    "Early Childhood Education",
+    "East Asian Studies",
+    "East European Studies",
+    "Ecology",
+    "Economics Major",
+    "Education",
+    "Education Administration",
+    "Education of the Deaf",
+    "Educational Psychology",
+    "Electrical Engineering",
+    "Elementary Education",
+    "Engineering Mechanics",
+    "Engineering Physics",
+    "English",
+    "English Composition",
+    "English Literature Major",
+    "Entomology",
+    "Entrepreneurship Major",
+    "Environmental Design/Architecture",
+    "Environmental Science",
+    "Environmental/Environmental Health Engineering",
+    "Epidemiology",
+    "Equine Studies",
+    "Ethnic Studies",
+    "European History",
+    "Experimental Pathology",
+    "Experimental Psychology",
+    "Fashion Design",
+    "Fashion Merchandising",
+    "Feed Science",
+    "Fiber",
+    "Textiles and Weaving Arts",
+    "Film",
+    "Finance",
+    "Floriculture",
+    "Food Science",
+    "Forensic Science",
+    "Forestry",
+    "French",
+    "Furniture Design",
+    "Game Design",
+    "Gay and Lesbian Studies",
+    "Genetics",
+    "Geography",
+    "Geological Engineering",
+    "Geology",
+    "Geophysics",
+    "German",
+    "Gerontology",
+    "Government Major",
+    "Graphic Design",
+    "Health Administration",
+    "Hebrew",
+    "Hispanic-American",
+    "Puerto Rican and Chicano Studies",
+    "Historic Preservation",
+    "History",
+    "Home Economics",
+    "Horticulture",
+    "Hospitality",
+    "Human Development",
+    "Human Resources Management Major",
+    "Illustration",
+    "Industrial Design",
+    "Industrial Engineering",
+    "Industrial Management",
+    "Industrial Psychology",
+    "Information Technology",
+    "Interior Architecture",
+    "Interior Design",
+    "International Agriculture",
+    "International Business",
+    "International Relations",
+    "International Studies",
+    "Islamic Studies",
+    "Italian",
+    "Japanese",
+    "Jazz Studies",
+    "Jewelry and Metalsmithing",
+    "Jewish Studies",
+    "Journalism",
+    "Kinesiology",
+    "Korean",
+    "Land Use Planning and Management",
+    "Landscape Architecture",
+    "Landscape Horticulture",
+    "Latin American Studies",
+    "Library Science",
+    "Linguistics",
+    "Logistics Management",
+    "Management Information Systems",
+    "Managerial Economics",
+    "Marine Biology Major",
+    "Marine Science",
+    "Marketing Major",
+    "Mass Communication",
+    "Massage Therapy",
+    "Materials Science",
+    "Mathematics",
+    "Mechanical Engineering",
+    "Medical Technology",
+    "Medieval and Renaissance Studies",
+    "Mental Health Services",
+    "Merchandising and Buying Operations",
+    "Metallurgical Engineering",
+    "Microbiology",
+    "Middle Eastern Studies",
+    "Military Science",
+    "Mineral Engineering",
+    "Missions",
+    "Modern Greek",
+    "Molecular Biology",
+    "Molecular Genetics",
+    "Mortuary Science",
+    "Museum Studies",
+    "Music",
+    "Music Education",
+    "Music History Major",
+    "Music Management",
+    "Music Therapy",
+    "Musical Theater",
+    "Native American Studies",
+    "Natural Resources Conservation",
+    "Naval Architecture",
+    "Neurobiology",
+    "Neuroscience",
+    "Nuclear Engineering",
+    "Nursing Major",
+    "Nutrition",
+    "Occupational Therapy",
+    "Ocean Engineering",
+    "Oceanography",
+    "Operations Management",
+    "Organizational Behavior Studies",
+    "Painting",
+    "Paleontology",
+    "Pastoral Studies",
+    "Peace Studies",
+    "Petroleum Engineering",
+    "Pharmacology",
+    "Pharmacy",
+    "Philosophy",
+    "Photography",
+    "Photojournalism Major",
+    "Physical Education",
+    "Physical Therapy",
+    "Physician Assistant",
+    "Physics",
+    "Physiological Psychology",
+    "Piano",
+    "Planetary Science",
+    "Plant Pathology",
+    "Playwriting and Screenwriting",
+    "Political Communication",
+    "Political Science Major",
+    "Portuguese",
+    "Pre-Dentistry",
+    "Pre-Law",
+    "Pre-Medicine",
+    "Pre-Optometry",
+    "Pre-Seminary",
+    "Pre-Veterinary Medicine",
+    "Printmaking",
+    "Psychology",
+    "Public Administration",
+    "Public Health",
+    "Public Policy Analysis",
+    "Public Relations Major",
+    "Radio and Television",
+    "Radiologic Technology",
+    "Range Science and Management",
+    "Real Estate",
+    "Recording Arts Technology",
+    "Recreation Management",
+    "Rehabilitation Services",
+    "Religious Studies",
+    "Respiratory Therapy",
+    "Risk Management",
+    "Rural Sociology",
+    "Russian",
+    "Scandinavian Studies",
+    "Sculpture",
+    "Slavic Languages and Literatures",
+    "Social Psychology",
+    "Social Work",
+    "Sociology",
+    "Soil Science",
+    "Sound Engineering",
+    "South Asian Studies",
+    "Southeast Asia Studies",
+    "Spanish Major",
+    "Special Education",
+    "Speech Pathology",
+    "Sport and Leisure Studies",
+    "Sports Management",
+    "Statistics Major",
+    "Surveying",
+    "Sustainable Resource Management",
+    "Teacher Education",
+    "Teaching English as a Second Language",
+    "Technical Writing",
+    "Technology Education",
+    "Textile Engineering",
+    "Theatre",
+    "Theology",
+    "Tourism",
+    "Toxicology",
+    "Turfgrass Science",
+    "Urban Planning",
+    "Urban Studies",
+    "Visual Communication",
+    "Voice",
+    "Web Design",
+    "Webmaster and Web Management",
+    "Welding Engineering",
+    "Wildlife Management",
+    "Women's Studies",
+    "Youth Ministries",
+    "Zoology"
+  ],
+  "state": [
+    "None",
+    "Alabama",
+    "Alaska",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Hawaii",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming"
+  ]
 }

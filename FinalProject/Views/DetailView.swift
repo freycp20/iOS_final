@@ -47,11 +47,11 @@ struct DetailView: View {
                     
                     Spacer()
                     VStack (alignment: .leading){
-                        Text("Average SAT")
+                        Text("Average \(VM.catChoice == "undergrad_schools" ? "SAT" : "GRE")")
                             .font(.title2)
                             .bold()
                         
-                        Text("\(currentSchool.meta_data.average_sat ?? 0)")
+                        Text("\(VM.catChoice == "undergrad_schools" ? currentSchool.meta_data.average_sat ?? 0 : currentSchool.meta_data.average_gre ?? 0)")
                             .font(.headline)
                             .foregroundColor(.secondary)
                     }.padding()
@@ -65,8 +65,8 @@ struct DetailView: View {
                                 .shadow(radius: 5)
                         )
                     Spacer()
-                    
                 }
+                
                 VStack{
                     HStack{
                         Spacer()
@@ -183,8 +183,8 @@ struct DetailView: View {
                                             }
                                             .font(.title2)
                                             .foregroundColor(.black)
-                                            Text("*INSERTS ADDRESS OF SCHOOL*")
-                                                .font(.headline)
+                                            Text("\(currentSchool.meta_data.address)")
+                                                .font(.subheadline)
                                                 .foregroundColor(.secondary)
                                         }
                                     }

@@ -16,29 +16,6 @@ struct StaticEditCardView: View {
     }
 }
 
-struct DarkModeView: View{
-    @Binding var toggle : Bool
-    var body: some View{
-        ZStack {
-            Capsule()
-                .frame(width:60,height:33)
-                .foregroundColor(Color(toggle ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6039008336) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1028798084)))
-            ZStack{
-                Circle()
-                    .frame(width:30, height:30)
-                    .foregroundColor(.white)
-                Image(systemName: toggle ? "sun.max.fill" : "moon.fill")
-            }
-            .shadow(color: .black.opacity(0.14), radius: 4, x: 0, y: 2)
-            .offset(x:toggle ? 13 : -13)
-            .animation(.spring())
-        }
-        .onTapGesture {
-            self.toggle.toggle()
-        }
-    }
-}
-
 struct SATFilterView: View{
     @Binding var SATtoggle : Bool
     @Binding var SATGrade: String
@@ -66,6 +43,8 @@ struct GPAFilterView: View{
             Toggle(isOn: $GPAtoggle) {
                 Text("Filter by GPA")
             }
+//            Text("\(currentSchool.meta_data.average_gpa, specifier: "%.2f") ")
+            
             if GPAtoggle {
                 TextField(text: $GPAGrade, prompt: Text("Enter GPA score")) {
                 }.font(.caption)
@@ -171,18 +150,6 @@ struct SettingsView: View {
                                 StaticEditCardView()
                             }
                         }
-                        // dark mode
-                        Section(header: Text("Display")){
-                            HStack{
-                                HStack{
-                                    Text("Dark Mode")
-                                    Spacer()
-                                }
-                                DarkModeView(toggle: $VM.darkModeToggle)
-//                                DarkModeView(toggle: $darkModeToggle)
-                            }
-                        }
-                        
                         
                         // major information
                         Section(header: Text("Major preference")){

@@ -12,12 +12,17 @@ class ViewModel : ObservableObject{
 
     @Published var categories : [String : [School]] = [String : [School]]()
     @Published var catChoice : String  = "undergrad_schools"
+    
     @Published var undergrad_schools : [School] = [School]()
     @Published var grad_schools : [School] = [School]()
     @Published var majors: [String] = [String]()
     @Published var states: [String] = [String]()
     @Published var corner_radius = 15
     @Published var userSat : Int = 1300
+    
+
+    @Published var firstChoice : String = "GPA"
+    @Published var secondChoice : String = "Test Scores"
     
     var intSAT : Int? {
         get {
@@ -49,9 +54,6 @@ class ViewModel : ObservableObject{
         }
     }
 
-    @Published var firstChoice : String = "gpa"
-    @Published var secondChoice : String = "sat"
-    
     @Published var darkModeToggle : Bool = false
     @Published var SATtoggle : Bool = false
     @Published var GPAtoggle : Bool = false
@@ -64,11 +66,10 @@ class ViewModel : ObservableObject{
     @Published var DesiredPop: String = ""
     @Published var CTtoggle : Bool = false
     @Published var DesiredCT: String = ""
-//
+
     var CTArr = ["rural", "suburban", "city"]
     var popArr = ["None", "10000>", "7000-10000", "3000-7000", "1000-3000", "<1000"]
     var populationCompare : [String : [String : Int]] = [
-        
         "None": [
             "max": 0,
             "min": 0
@@ -216,11 +217,12 @@ class ViewModel : ObservableObject{
                 undergrad_schools = json_data.undergraduate_schools
                 grad_schools = json_data.graduate_schools
                 
+                print(undergrad_schools)
+                print(grad_schools)
                 cat_saved_schools["undergrad_schools"] = [School]()
                 cat_saved_schools["grad_schools"] = [School]()
                 majors = json_data.major
                 states = json_data.state
-//                population_range = json_data.population_range
                 
             } catch {
                 print(error)

@@ -13,7 +13,6 @@ struct AllSchools : Decodable{
     var graduate_schools : [School] = [School]()
     var major: [String] = [String]()
     var state: [String] = [String]()
-//    var population_range: [String] = [String]()
     
 }
 
@@ -41,6 +40,7 @@ struct MetaData : Decodable {
     var student_to_faculty_ratio : String
     var state : String
     var type_of_community : String
+    var address : String
     
 }
 

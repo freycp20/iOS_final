@@ -137,6 +137,7 @@ struct ExploreView: View {
                     //                .edgesIgnoringSafeArea([.top, .bottom])
                 }
             }
+            .navigationViewStyle(.stack)
             SideMenu(isSidebarVisible: $isSideBarOpened, index: $index)
             
             
