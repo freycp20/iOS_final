@@ -142,23 +142,23 @@ class ViewModel : ObservableObject{
     }
     // SAT, GPA, GRE, STATE, com type
     func passesTests(school: School) -> Bool {
-        if (filterBySat) {
+        if (SATtoggle) {
             if (school.meta_data.average_sat ?? 0 > (intSAT ?? 1600)) {
                 return false
             }
         }
-        if (filterByGPA) {
+        if (GPAtoggle) {
             if (school.meta_data.average_gpa > (doubleGPA ?? 5.0)) {
                 return false
             }
         }
-        if (filterByGRE) {
+        if (GREtoggle) {
             if (school.meta_data.average_gre ?? 0 > (intGRE ?? 400)) {
                 return false
             }
         }
         
-        if (filterByPopulation) {
+        if (Poptoggle) {
             if (DesiredPop != "None" && DesiredPop != "") {
                 print(school.school_name)
                 print(DesiredPop)
@@ -176,7 +176,7 @@ class ViewModel : ObservableObject{
             }
         }
         
-        if (filterByComType) {
+        if (CTtoggle) {
             if (DesiredCT != "") {
                 if (DesiredCT != school.meta_data.type_of_community) {
                     return false

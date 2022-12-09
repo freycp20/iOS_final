@@ -32,7 +32,7 @@
 		4A290C8729197288008AC4AE /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A290C8A29197288008AC4AE /* FinalProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectApp.swift; sourceTree = "<group>"; };
 		4A290C8C29197289008AC4AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4A290C8E29197289008AC4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A290C8E29197289008AC4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FinalProject/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		4A290C9129197289008AC4AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A290C9C291973EA008AC4AE /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		4A290C9F29197402008AC4AE /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A290C8229197288008AC4AE /* Build configuration list for PBXProject "FinalProject" */;
+			buildConfigurationList = 4A290C8229197288008AC4AE /* Build configuration list for PBXProject "StudyDate" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -351,7 +351,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 2J242GG67N;
+				DEVELOPMENT_TEAM = DWT6MGT6KU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -365,7 +365,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mannyc.FinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = calebf.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -381,7 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 2J242GG67N;
+				DEVELOPMENT_TEAM = DWT6MGT6KU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -395,7 +395,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mannyc.FinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = calebf.FinalProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -406,7 +406,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A290C8229197288008AC4AE /* Build configuration list for PBXProject "FinalProject" */ = {
+		4A290C8229197288008AC4AE /* Build configuration list for PBXProject "StudyDate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A290C9329197289008AC4AE /* Debug */,

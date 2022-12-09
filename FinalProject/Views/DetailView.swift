@@ -195,11 +195,13 @@ struct DetailView: View {
                                     }
                                 }
                             }.padding()
+                                .cornerRadius(25)
                                 .background(
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(.white)
                                         .shadow(radius: 5)
                                         .frame(minWidth: 0, maxWidth: .infinity)
+                                        
                                 )
                         }
                         Spacer()
@@ -287,7 +289,7 @@ struct DetailView: View {
                     } label: {
                         Image(systemName: (VM.favSchool != nil && VM.favSchool==currentSchool) ? "star.fill" : "star")
                     }
-                }
+                }.frame(width: UIScreen.main.bounds.width-30)
             }
         }
         .navigationBarTitle(Text(""), displayMode: .inline)

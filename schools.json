@@ -301,7 +301,27 @@
       "image": "university_of_California_Los_Angeles"
     }
   ],
-  "graduate_schools": [
+"graduate_schools": [
+    {
+      "school_name": "Grand Canyon University",
+      "meta_data": {
+        "size": 36114,
+        "average_gre": 300,
+        "average_gpa": 2.8,
+        "avg_cost_before_financial_aid": 32100,
+        "avg_cost_after_financial_aid": 16500,
+        "location": {
+          "latitude": 33.5075,
+          "longitude": -112.1247
+        },
+        "student_to_faculty_ratio": "21:1",
+        "state": "Arizona",
+        "type_of_community": "city",
+        "address": "3300 W Camelback Rd, Phoenix, AZ 85017"
+      },
+      "url": "https://www.gcu.edu",
+      "image": "grand-canyon-university"
+    },
     {
       "school_name": "Johns Hopkins University",
       "meta_data": {
@@ -361,26 +381,6 @@
       },
       "url": "https://meridianuniversity.edu/",
       "image": "meridian-university"
-    },
-    {
-      "school_name": "Grand Canyon University",
-      "meta_data": {
-        "size": 36114,
-        "average_gre": 300,
-        "average_gpa": 2.8,
-        "avg_cost_before_financial_aid": 32100,
-        "avg_cost_after_financial_aid": 16500,
-        "location": {
-          "latitude": 33.5075,
-          "longitude": -112.1247
-        },
-        "student_to_faculty_ratio": "21:1",
-        "state": "Arizona",
-        "type_of_community": "city",
-        "address": "3300 W Camelback Rd, Phoenix, AZ 85017"
-      },
-      "url": "https://www.gcu.edu",
-      "image": "grand-canyon-university"
     },
     {
       "school_name": "Yale University",

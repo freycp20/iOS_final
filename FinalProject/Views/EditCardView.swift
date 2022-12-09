@@ -102,16 +102,16 @@ struct EditCardView: View {
                     }
                 }
             }.padding()
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity
+                )
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .fill(.white)
 //                        .border(.blue, width: 2)
 //                        .shadow(radius: 5)
                         
-                )
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity
                 )
                 .overlay(
                     ZStack {
@@ -131,16 +131,17 @@ struct EditCardView: View {
                     }
                 }
             }.padding()
+                
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity
+                )
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .fill(.white)
 //                        .border(.blue, width: 2)
 //                        .shadow(radius: 5)
                         
-                )
-                .frame(
-                    minWidth: 0,
-                    maxWidth: .infinity
                 )
                 .overlay(
                     ZStack {
